@@ -1,0 +1,104 @@
+.vragen{
+    margin: 4rem;
+    border-radius: 2rem;
+    &__uitleg{
+        width: 70rem;
+        height: 25rem;
+        list-style: none;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        box-shadow: inset 0 -0.5rem 3rem 0 rgba($color: #000000, $alpha: 0.2);
+        border-radius: 2rem 2rem 0 0;
+        background: #78BCBA;
+    }
+    &__vraag{
+        width: 70rem;
+        height: 25rem;
+        list-style: none;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        box-shadow: inset 0 -0.5rem 3rem 0 rgba($color: #000000, $alpha: 0.2);
+        background: white;
+        
+        &:nth-of-type(41){
+            border-radius: 0 0 2rem 2rem;
+        }
+        &--active{
+            background: #78BCBA;
+        }
+    }
+
+    &__inhoud{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__slider{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: none;
+        padding: 4rem;
+        gap: 2rem;
+        & > div{
+            display: flex;
+            justify-content: space-between;
+            & > p{
+                font-size: 70%;
+            }
+        }
+        & > input{
+            -webkit-appearance: none;
+            height: 1rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            
+        }
+        & > input[type=range]::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            background: blue;
+            color: blue;
+        }
+
+    }
+
+    
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+  
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
