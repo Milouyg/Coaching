@@ -1,62 +1,106 @@
 @use "../abstract/colors";
 @use "../components/components.scss";
 
-.section__gedachtes{
+.gedachtes__form{
     height: calc(100vh - 6rem);
     width: 100%;
     padding: 2rem;
 }
 
-.ul__gedachtes{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.gedachtes__section{
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.li__gedachte{
+.gedachtes__bovenste--section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gedachtes__onderste--section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem ;
+}
+
+.gedachtes__ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+
+}
+
+.gedachte__li{
     list-style: none;
-    width: 50rem;
-    height: 50rem;
+    width: 40rem;
+    height: 40rem;
     border: #78BCBA solid .5rem;
     // background: #78BCBA;
     border-radius: components.$border-radius--gedachtes;
 }
 
-.p__gedachte{
+.gedachte__figure--head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 2rem 1rem;
+    width: 100%;
     height: 5rem;
-    border-top-right-radius: components.$border-radius--gedachtes;
-    border-top-left-radius: components.$border-radius--gedachtes;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
 }
 
-.figure__gedachte{
+.gedachte__question{
+    color: #78BCBA;
     background: white;
-    width: 96%;
-    border: #78BCBA solid .5rem;
-    margin: 2rem 1rem;
-    height: 38rem;
-    border-radius: 2rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 100%;
+    border-radius: 50%;
+    border: #78BCBA solid .2rem;
+
+    &:hover{
+        cursor: pointer;
+        background: #78BCBA;
+        color: white;
+    }
 }
 
-.figure__p{
-    width: 96%;
-    padding: 1rem;
+.gedachte__h2{
+    color: #78BCBA;
     text-underline-offset: 1rem;
     text-decoration: underline;
-    text-decoration-thickness: 1rem;
+    text-decoration-thickness: .25rem;
     text-decoration-color: #78BCBA;
 }
 
-.figure__textarea{
+.gedachte__figure--textarea{
+    background: white;
+    width: 96%;
+    border: #78BCBA solid .5rem;
+    margin: 2rem .8rem;
+    height: 75%;
+    border-radius: 2rem;
+}
+
+.textarea__figure{
     border: none;
     outline: none;
+    color: #78BCBA;
     font-size: 2rem;
-    padding: .5rem;
+    padding: 1.5rem;
     width: 100%;
-    height: 88.5%;
+    height: 100%;
     resize: none;
     border: none;
-    border-bottom-right-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+    border-radius: 1.5rem;
+    
 }
+
+
+
 

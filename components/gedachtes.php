@@ -9,22 +9,107 @@
 </head>
 <?php include "./header.php"; ?>
 <body>
-    <section class="section__gedachtes">
-        <ul class="ul__gedachtes">
-            <li class="li__gedachte">
-                <h2 class="p__gedachte">
-                    Gebeurtenis
-                </h2>
-                <figure class="figure__gedachte">
-                    <p class="figure__p">
-                        Zo precies mogelijk: wie, met wie? wat? waar?
-                    </p>
-                    <textarea class="figure__textarea" name="" id="" cols="30" rows="10" placeholder="Type hier je gebeurtenis in"></textarea>
-                </figure>
-            </li>
-            
-        </ul>
-    </section>
+<form action="" class="gedachtes__form">
+        <section class="gedachtes__section gedachtes__bovenste--section">
+                <ul class="gedachtes__ul">
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Gebeurtenis
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Zo precies mogelijk: wie, met wie? wat? waar?"></textarea>
+                        </figure>
+                    </li>
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Gevoel
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welk gevoel was geassocieerd met de gebeurtenis"></textarea>
+                        </figure>
+                    </li>
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Gedrag
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welk gedrag was geassocieerd met de gebeurtenis"></textarea>
+                        </figure>
+                    </li>
+                </ul>
+        </section>
+        <section class="gedachtes__section gedachtes__onderste--section">
+                <ul class="gedachtes__ul">
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Onhandige gedachten
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke onhandige gedacchten had je bij de gebeurtenis"></textarea>
+                        </figure>
+                    </li>
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Gevoel
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welk gevoel zou je graag willen hebben"></textarea>
+                        </figure>
+                    </li>
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Gedrag
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Hoe zou jij willen gedragen tijdens de gebeurtenis"></textarea>
+                        </figure>
+                    </li>
+                    <li class="gedachte__li">
+                        <figure class="gedachte__figure gedachte__figure--head">
+                            <h2 class="gedachte__h2">
+                                Helpende gedachten
+                            </h2>
+                            <button class="gedachte__question">
+                                ?
+                            </button>
+                        </figure>
+                        <figure class="gedachte__figure gedachte__figure--textarea">
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke helpende gedachten had je bij de gebeurtenis"></textarea>
+                        </figure>
+                    </li>
+                </ul>
+        </section>
+    </form>
 </body>
 
 </html>
