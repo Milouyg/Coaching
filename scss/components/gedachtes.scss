@@ -4,7 +4,7 @@
 .gedachtes__form{
     height: calc(100vh - 6rem);
     width: 100%;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .gedachtes__section{
@@ -29,6 +29,7 @@
 .gedachtes__ul{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5rem;
     flex-wrap: wrap;
 
