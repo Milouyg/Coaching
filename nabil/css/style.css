@@ -1,0 +1,82 @@
+.dagboek {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10rem;
+}
+
+.dagboek__heading {
+  color: #62B6B7;
+  padding: 3rem;
+  font-size: 4.5rem;
+}
+
+.dagboek__container {
+  width: 55rem;
+  height: 100%;
+  border: 0.3rem solid #62B6B7;
+  border-radius: 1.5rem;
+}
+
+.dagboek__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 5rem;
+  flex-wrap: wrap;
+  padding: 4rem;
+}
+
+.dagboek__select {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 12rem;
+  flex-wrap: wrap;
+}
+
+.dagboek__selectli {
+  margin-bottom: 5rem;
+  color: #62B6B7;
+}
+
+.dagboek__selectli--second {
+  text-align: center;
+}
+
+.dagboek__listitem {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  border: 0.3rem solid #62B6B7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dagboek__listitem:hover {
+  background: #62B6B7;
+  transition: 0.2s;
+  cursor: pointer;
+  color: white;
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 2rem;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

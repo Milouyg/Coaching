@@ -1,0 +1,69 @@
+@use "../abstracts/colors";
+
+.dagboek{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+}
+
+.dagboek__heading{
+    color: map-get(colors.$main,"primary");
+    padding: 3rem;
+    font-size: 4.5rem;
+}
+
+.dagboek__container{
+    width: 55rem;
+    height: 100%;
+    border: .3rem solid  map-get(colors.$main,"primary");
+    border-radius: 1.5rem;
+}
+
+.dagboek__list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding: 4rem;
+}
+
+.dagboek__select{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 12rem;
+    flex-wrap: wrap;
+   
+}
+
+
+.dagboek__selectli{
+    margin-bottom: 5rem;
+    color: map-get(colors.$main,"primary");
+}
+
+.dagboek__selectli--second{
+    text-align: center;
+}
+
+
+
+.dagboek__listitem{
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    border: .3rem solid  map-get(colors.$main,"primary");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dagboek__listitem:hover{
+    background: map-get(colors.$main,"primary");
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+}
