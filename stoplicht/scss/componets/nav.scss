@@ -1,0 +1,47 @@
+.nav{
+    height: 12rem;
+    width: 100vw;
+    box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+
+    &__list{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    &__listItem{
+        width: calc(100%/3);
+        display: flex;
+        align-items: center;
+
+        &--first{
+            justify-content: flex-start;
+        }
+
+        &--second{
+            justify-content: center;
+        }
+
+        &--third{
+            justify-content: flex-end;
+        }
+    }
+
+    &__h2{
+        font-size: 250%;
+        font-weight: 400;
+        color: #7ABFBD;
+    }
+
+    &__naam{
+        font-size: 150%;
+        font-weight: 400;
+        color: #7ABFBD;
+    }
+}
