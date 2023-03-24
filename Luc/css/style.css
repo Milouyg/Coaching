@@ -72,10 +72,10 @@ body {
   color: none;
   padding: 4rem;
   gap: 2rem;
-  opacity: 0;
+  display: none;
 }
 .vragen__slider--active {
-  opacity: 1;
+  display: flex;
 }
 .vragen__slider > input {
   -webkit-appearance: none;

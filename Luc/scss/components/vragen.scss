@@ -50,11 +50,11 @@
         color: none;
         padding: 4rem;
         gap: 2rem;
+        display: none;
 
-        opacity: 0;
 
         &--active {
-            opacity: 1;
+            display: flex;
         }
 
         & > input {
