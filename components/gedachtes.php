@@ -59,14 +59,14 @@
                     <li class="gedachte__li">
                         <figure class="gedachte__figure gedachte__figure--head">
                             <h2 class="gedachte__h2">
-                                Onhandige gedachten
+                                Onhandige gedachte
                             </h2>
                             <button class="gedachte__question">
                                 ?
                             </button>
                         </figure>
                         <figure class="gedachte__figure gedachte__figure--textarea">
-                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke onhandige gedachten had je bij de gebeurtenis"></textarea>
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke onhandige gedachte had je bij de gebeurtenis"></textarea>
                         </figure>
                     </li>
                     <li class="gedachte__li">

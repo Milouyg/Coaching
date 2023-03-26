@@ -1,0 +1,40 @@
+{
+    "cardContents":[
+        {
+            "id": 0,
+            "h2": "Gebeurtenis",
+            "textarea": "Zo precies mogelijk: wie, met wie? wat? waar?"
+        },
+        {
+            "id": 1,
+            "h2": "Gevoel",
+            "textarea": "Welk gevoel was geassocieerd met de gebeurtenis"
+        },
+        {
+            "id": 2,
+            "h2": "gedrag",
+            "textarea": "Welk gedrag was geassocieerd met de gebeurtenis"
+        },
+        {
+            "id": 3,
+            "h2": "Onhandige gedachte",
+            "textarea": "Welke onhandige gedachte had je bij de gebeurtenis"
+        },
+        {
+            "id": 4,
+            "h2": "Gevoel",
+            "textarea": "Welk gevoel zou je graag willen hebben"
+        },
+        {
+            "id": 5,
+            "h2": "Gedrag",
+            "textarea": "Hoe zou jij willen gedragen tijdens de gebeurtenis"
+        },
+        {
+            "id": 6,
+            "h2": "Helpende gedachte",
+            "textarea": "Welke helpende gedachten had je bij de gebeurtenis"
+        }
+        
+    ]
+}

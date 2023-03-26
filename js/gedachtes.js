@@ -1,5 +1,3 @@
-// Gedachtes help button
-
 class Gedachtes {
     placeToRender;
     gedachtesForm;
@@ -65,6 +63,31 @@ class Gedachtes {
     }
 }
 
+class getJson{
+    url = "";
+    data = null;
+
+    constructor(url){
+        this.url = url;
+    }
+
+    async getData(){
+        {
+            await fetch(this.url)
+            .then(function(response){
+            return response.json();
+            }).then((data) =>{
+                this.data = data;
+            })
+        }
+        return this.data;
+    }
+
+}
+
 const gedachtes = new Gedachtes("body");
 gedachtes.render();
+
+const gedachteJson = new getJson("../data/gedachtes.json");
+gedachteJson.getData().then(function(data){console.log(data)});
 
