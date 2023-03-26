@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./../css/style.css">
+    <script src="../js/gedachtes.js" defer></script>
 </head>
 <?php include "./header.php"; ?>
 <body>
-<form action="" class="gedachtes__form">
+<!-- <form action="" class="gedachtes__form">
         <section class="gedachtes__section gedachtes__bovenste--section">
                 <ul class="gedachtes__ul">
                     <li class="gedachte__li">
@@ -65,7 +66,7 @@
                             </button>
                         </figure>
                         <figure class="gedachte__figure gedachte__figure--textarea">
-                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke onhandige gedacchten had je bij de gebeurtenis"></textarea>
+                            <textarea class="textarea__figure" name="" id="" cols="30" rows="10" placeholder="Welke onhandige gedachten had je bij de gebeurtenis"></textarea>
                         </figure>
                     </li>
                     <li class="gedachte__li">
@@ -109,7 +110,7 @@
                     </li>
                 </ul>
         </section>
-    </form>
+    </form> -->
 </body>
 
 </html>
