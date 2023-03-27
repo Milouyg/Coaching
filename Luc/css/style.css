@@ -132,8 +132,6 @@ body {
   display: flex;
   justify-content: space-between;
   list-style: none;
-}
-.vragen__sliderNumber {
   font-size: 70%;
 }
 
