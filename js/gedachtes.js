@@ -10,9 +10,11 @@ class Gedachtes {
     gedachteFigureTextarea;
     gedachteTextarea;
 
+    cardContent;
+
     constructor(placeToRender) {
         // We pakken hier de html body element
-        this.placeToRender = document.getElementsByTagName(placeToRender)[0]; 
+        this.placeToRender = document.getElementsByTagName(placeToRender)[0];
 
         this.gedachtesForm = document.createElement("form");
         this.gedachtesForm.classList = "gedachtes__form";
@@ -53,6 +55,7 @@ class Gedachtes {
             this.gedachteLi.appendChild(this.gedachteFigureTextarea);
             this.gedachteFigureTextarea.appendChild(this.gedachteTextarea);
         }
+
     }
 
     render() {
@@ -61,33 +64,30 @@ class Gedachtes {
         this.gedachtesSection.appendChild(this.gedachtesUl);
         this.generateCards(7);
     }
-}
 
-class getJson{
-    url = "";
-    data = null;
-
-    constructor(url){
-        this.url = url;
+    // Haalt gedachtes.json op
+    async getCardContent() {
+        await fetch("../data/gedachtes.json")
+            .then(function (response) {
+                return response.json();
+            }).then((data) => {
+                this.cardContent = data;
+            });
+        return this.cardContent;
     }
 
-    async getData(){
-        {
-            await fetch(this.url)
-            .then(function(response){
-            return response.json();
-            }).then((data) =>{
-                this.data = data;
-            })
-        }
-        return this.data;
+    // Haal data op 
+    // Console loggen wat ik precies wil
+    // De index van de json ophalen
+    // De index d.m.v. innertext op het kaartje tonen
+    pickUpContent(cardContent) {
+        
     }
-
 }
+
 
 const gedachtes = new Gedachtes("body");
 gedachtes.render();
-
-const gedachteJson = new getJson("../data/gedachtes.json");
-gedachteJson.getData().then(function(data){console.log(data)});
-
+gedachtes.getCardContent().then(function (cardContent) {
+    gedachtes.pickUpContent(cardContent);
+});
