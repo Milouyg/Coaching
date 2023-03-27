@@ -19,12 +19,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, white, 70%, #78BCBA);
+  background: linear-gradient(to right, white, 70%, hsl(178deg, 35%, 64%));
 }
 
 .vragen {
   margin: 4rem;
   border-radius: 2rem;
+  box-shadow: 0 0 1rem 1rem hsl(178deg, 35%, 64%);
 }
 .vragen__uitleg {
   width: 70rem;
@@ -36,7 +37,7 @@ body {
   gap: 2rem;
   box-shadow: inset 0 -0.5rem 3rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 2rem 2rem 0 0;
-  background: #78bcba;
+  background: white;
 }
 .vragen__vraag {
   width: 70rem;
@@ -46,16 +47,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  box-shadow: inset 0 -0.5rem 3rem 0 rgba(0, 0, 0, 0.2);
   background: white;
   flex-shrink: 1;
   color: black;
+  border-bottom: 0.3rem solid hsl(178deg, 35%, 64%);
 }
 .vragen__vraag:nth-of-type(41) {
   border-radius: 0 0 2rem 2rem;
 }
 .vragen__vraag--active {
-  background: #78bcba;
+  box-shadow: 0 0 1rem 1rem hsl(178deg, 35%, 64%);
+  z-index: 1;
+  position: relative;
+}
+.vragen__vraag--active .vragen__slider {
+  display: flex;
 }
 .vragen__nummer {
   color: black;
@@ -77,57 +83,56 @@ body {
 .vragen__slider--active {
   display: flex;
 }
+.vragen__slider--active .vragen__vraag {
+  background: hsl(178deg, 35%, 64%);
+}
 .vragen__slider > input {
   -webkit-appearance: none;
   height: 1rem;
   width: 100%;
   border-radius: 0.5rem;
+  background: hsl(178deg, 35%, 64%);
+  border: 0.1rem solid rgba(0, 0, 0, 0.6);
 }
 .vragen__slider > input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: blue;
   color: blue;
 }
-.vragen__sliderNumbers {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-.vragen__sliderNumber {
-  font-size: 70%;
-}
-
-input[type=range]::-webkit-slider-thumb {
+.vragen__slider > input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
   height: 36px;
   width: 16px;
   border-radius: 3px;
-  background: #ffffff;
+  background: hsl(178deg, 35%, 64%);
   cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  margin-top: -14px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-
-input[type=range]::-moz-range-thumb {
+.vragen__slider > input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
   height: 36px;
   width: 16px;
   border-radius: 3px;
-  background: #ffffff;
+  background: hsl(178deg, 35%, 64%);
   cursor: pointer;
 }
-
-/* All the same stuff for IE */
-input[type=range]::-ms-thumb {
+.vragen__slider > input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
   height: 36px;
   width: 16px;
   border-radius: 3px;
-  background: #ffffff;
+  background: hsl(178deg, 35%, 64%);
   cursor: pointer;
+}
+.vragen__sliderNumbers {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */
