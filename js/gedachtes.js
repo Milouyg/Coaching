@@ -35,8 +35,9 @@ class Gedachtes {
             this.gedachteFigure = document.createElement("figure");
             this.gedachteFigure.classList = "gedachte__figure gedachte__figure--head";
 
-            this.gedachteH2 = document.createElement("gedachte__h2");
+            this.gedachteH2 = document.createElement("h2");
             this.gedachteH2.classList = "gedachte__h2";
+            this.gedachteH2.setAttribute("id", i);
 
             this.gedachteButton = document.createElement("button");
             this.gedachteButton.classList = "gedachte__question";
@@ -76,18 +77,25 @@ class Gedachtes {
         return this.cardContent;
     }
 
-    // Haal data op 
+    // Haal data op
     // Console loggen wat ik precies wil
     // De index van de json ophalen
     // De index d.m.v. innertext op het kaartje tonen
+
     pickUpContent(cardContent) {
-        
+        for (let i = 0; i < 7; i++) {
+            const gedachteH2 = document.getElementsByClassName('gedachte__h2')[i];
+            const textarea = document.getElementsByClassName("textarea__figure")[i];
+            
+            gedachteH2.innerText = cardContent["cardContents"][i]["h2"];
+            textarea.placeholder = cardContent["cardContents"][i]["textarea"];
+            
+        }
     }
 }
 
-
 const gedachtes = new Gedachtes("body");
 gedachtes.render();
-gedachtes.getCardContent().then(function (cardContent) {
+gedachtes.getCardContent().then((cardContent) => {
     gedachtes.pickUpContent(cardContent);
 });

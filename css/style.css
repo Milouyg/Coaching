@@ -57,33 +57,23 @@ body {
 .gedachtes__section {
   width: 100%;
   flex-wrap: wrap;
-}
-
-.gedachtes__bovenste--section {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.gedachtes__onderste--section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
 }
 
 .gedachtes__ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
   flex-wrap: wrap;
 }
 
 .gedachte__li {
   list-style: none;
-  width: 35rem;
-  height: 35rem;
+  width: 32rem;
+  height: 32rem;
   border: #78BCBA solid 0.5rem;
   border-radius: 2.5rem;
 }
@@ -115,6 +105,7 @@ body {
 }
 
 .gedachte__h2 {
+  font-size: 125%;
   color: #78BCBA;
   text-underline-offset: 1rem;
   text-decoration: underline;
@@ -135,13 +126,16 @@ body {
   border: none;
   outline: none;
   color: #78BCBA;
-  font-size: 2rem;
+  font-size: 90%;
   padding: 1.5rem;
   width: 100%;
   height: 100%;
   resize: none;
   border: none;
   border-radius: 1.5rem;
+}
+.textarea__figure::placeholder {
+  color: #78BCBA;
 }
 
 /*# sourceMappingURL=style.css.map */
