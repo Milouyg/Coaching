@@ -63,8 +63,8 @@ class QuestionNumber {
     }
 }
 
-const questionlist = new QuestionList();
-questionlist.render();
-const questionItem = new QuestionItem(questionlist.questionList, "vragen__inhoud");
-questionItem.render();
+// const questionlist = new QuestionList();
+// questionlist.render();
+// const questionItem = new QuestionItem(questionlist.questionList, "vragen__inhoud");
+// questionItem.render();
 // const questionNumber = new QuestionNumber(questionlist)
