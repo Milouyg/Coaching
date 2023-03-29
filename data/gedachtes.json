@@ -7,12 +7,12 @@
         },
         {
             "id": 1,
-            "h2": "Gevoel",
+            "h2": "Onhandig gevoel",
             "textarea": "Welk gevoel was geassocieerd met de gebeurtenis"
         },
         {
             "id": 2,
-            "h2": "gedrag",
+            "h2": "Onhandig gedrag",
             "textarea": "Welk gedrag was geassocieerd met de gebeurtenis"
         },
         {
@@ -22,12 +22,12 @@
         },
         {
             "id": 4,
-            "h2": "Gevoel",
+            "h2": "Handig gevoel",
             "textarea": "Welk gevoel zou je graag willen hebben"
         },
         {
             "id": 5,
-            "h2": "Gedrag",
+            "h2": "Handig gedrag",
             "textarea": "Hoe zou jij willen gedragen tijdens de gebeurtenis"
         },
         {
