@@ -1,0 +1,54 @@
+@use "../components/components.scss";
+
+.modaal__figure{
+    display: none;
+    position: absolute;
+    border: #78BCBA solid .5rem;
+    width: 32rem;
+    height: 32rem;
+    border-radius: components.$border-radius--gedachtes;
+}
+
+.modaal__figure--show{
+    display: block;
+}
+
+.modaal__header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem;
+    width: 100%;
+    height: 5rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.modaal__button{
+    background: none;
+    color: #78BCBA;
+    font-size: 100%;
+    width: 3rem;
+    height: 3rem;
+    border: #78BCBA solid .2rem;
+    border-radius: 50%;
+
+    &:hover{
+        cursor: pointer;
+        background: #78BCBA;
+        color: white;
+    }
+}
+
+.modaalP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: #78BCBA solid .5rem;
+    border-radius: 2rem;
+    margin: 2rem 0.8rem;
+    font-family: sans-serif;
+    font-size: 90%;
+    height: 75%;
+    padding: 1rem;
+}

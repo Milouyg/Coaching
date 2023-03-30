@@ -3,37 +3,44 @@
         {
             "id": 0,
             "h2": "Gebeurtenis",
-            "textarea": "Zo precies mogelijk: wie, met wie? wat? waar?"
+            "textarea": "Zo precies mogelijk: wie, met wie? wat? waar?",
+            "question" : "test"
         },
         {
             "id": 1,
             "h2": "Onhandig gevoel",
-            "textarea": "Welk gevoel was geassocieerd met de gebeurtenis"
+            "textarea": "Welk gevoel was geassocieerd met de gebeurtenis",
+            "question" : "test"
         },
         {
             "id": 2,
             "h2": "Onhandig gedrag",
-            "textarea": "Welk gedrag was geassocieerd met de gebeurtenis"
+            "textarea": "Welk gedrag was geassocieerd met de gebeurtenis",
+            "question" : "test"
         },
         {
             "id": 3,
             "h2": "Onhandige gedachte",
-            "textarea": "Welke onhandige gedachte had je bij de gebeurtenis"
+            "textarea": "Welke onhandige gedachte had je bij de gebeurtenis",
+            "question" : "test"
         },
         {
             "id": 4,
             "h2": "Handig gevoel",
-            "textarea": "Welk gevoel zou je graag willen hebben"
+            "textarea": "Welk gevoel zou je graag willen hebben",
+            "question" : "test"
         },
         {
             "id": 5,
             "h2": "Handig gedrag",
-            "textarea": "Hoe zou jij willen gedragen tijdens de gebeurtenis"
+            "textarea": "Hoe zou jij willen gedragen tijdens de gebeurtenis",
+            "question" : "test"
         },
         {
             "id": 6,
             "h2": "Helpende gedachte",
-            "textarea": "Welke helpende gedachten had je bij de gebeurtenis"
+            "textarea": "Welke helpende gedachten had je bij de gebeurtenis",
+            "question" : "test"
         }
     ]
 }
