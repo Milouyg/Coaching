@@ -37,34 +37,73 @@ class QuestionItem {
     questionList;
     questionInhoud;
     questionNumber;
-    constructor(newQuestionList) {
-        this.question = document.createElement("li");
-        this.question.classList = "vragen__vraag"
+    questionParagraaf;
 
+    slider;
+    sliderInput;
+    sliderNumbers;
+    sliderNumber;
+    constructor(newQuestionList) {
         this.questionList = newQuestionList;
+
+        this.question = document.createElement("li");
+        this.question.classList = "vragen__vraag vragen__vraag--active";
+
+        this.questionInhoud = document.createElement("section");
+        this.questionInhoud.classList = "vragen__inhoud";
+
+        this.questionParagraaf = document.createElement("p");
+        this.questionParagraaf.classList = "vragen__paragraaf";
+
+        this.slider = document.createElement("div");
+        this.slider.classList = "vragen__slider";
+        this.sliderInput = document.createElement("input");
+        this.sliderInput.setAttribute("type", "range")
+        this.sliderInput.setAttribute("min", "1")
+        this.sliderInput.setAttribute("max", "6")
+
+        this.sliderNumbers = document.createElement("ul");
+        this.sliderNumbers.classList = "vragen__sliderNumbers";
+        
+        this.renderSliderNumbers();
+        
+
+        
+
+        console.log(this.questionList)
+        this.renderQuestionNumber();
+
+        // <input type="range" name="" id="" min="1" max="6">
     }
     render() {
         this.questionList.appendChild(this.question);
+        this.question.appendChild(this.questionInhoud);
+        this.questionInhoud.appendChild(this.questionParagraaf);
+        this.question.appendChild(this.slider);
+        this.slider.appendChild(this.sliderInput)
+        this.slider.appendChild(this.sliderNumbers);
     }
-}
-
-class QuestionNumber {
-    questionList;
-    questionNumber;
-    constructor(newQuestionList) {
-        this.questionList = newQuestionList;
-
-    }
-    render() {
-        for (let i = 0; i < this.htmlElement.length; i++) {
-            this.questionNumber = this.questionInhoud[i].children[0]
-            this.questionNumber.innerText = i + 1;
+    renderSliderNumbers(){
+        for(let i = 0; i < 6; i++){
+            this.sliderNumber = document.createElement("li");
+            this.sliderNumber.innerText = i + 1
+            this.sliderNumbers.appendChild(this.sliderNumber);
         }
     }
+    
+    renderQuestionNumber = () =>{
+        for (let i = 0; i < 1; i++) {
+            this.questionNumber = document.createElement("h3");
+            this.questionNumber.classList = "vragen__nummer";
+            this.questionNumber.innerText = i + 1;
+            this.questionInhoud.appendChild(this.questionNumber)
+        } 
+    }
 }
 
-// const questionlist = new QuestionList();
-// questionlist.render();
-// const questionItem = new QuestionItem(questionlist.questionList, "vragen__inhoud");
-// questionItem.render();
-// const questionNumber = new QuestionNumber(questionlist)
+
+
+const questionlist = new QuestionList();
+questionlist.render();
+const questionItem = new QuestionItem(questionlist.questionList);
+questionItem.render();
