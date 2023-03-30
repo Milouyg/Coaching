@@ -26,6 +26,8 @@ body {
   margin: 4rem;
   border-radius: 2rem;
   box-shadow: 0 0 1rem 1rem hsl(178deg, 35%, 64%);
+  display: flex;
+  flex-direction: column;
 }
 .vragen__uitleg {
   width: 70rem;
@@ -41,7 +43,7 @@ body {
 }
 .vragen__vraag {
   width: 70rem;
-  max-height: 25rem;
+  max-height: 35rem;
   list-style: none;
   padding: 2rem;
   display: flex;
@@ -51,6 +53,7 @@ body {
   flex-shrink: 1;
   color: black;
   border-bottom: 0.3rem solid hsl(178deg, 35%, 64%);
+  opacity: 0.5;
 }
 .vragen__vraag:nth-of-type(41) {
   border-radius: 0 0 2rem 2rem;
@@ -59,9 +62,19 @@ body {
   box-shadow: 0 0 1rem 1rem hsl(178deg, 35%, 64%);
   z-index: 1;
   position: relative;
+  opacity: 1;
 }
 .vragen__vraag--active .vragen__slider {
   display: flex;
+}
+.vragen__vraag > input {
+  width: 20rem;
+  height: 8rem;
+  font-size: 200%;
+  border-radius: 2rem;
+  border: 0.3rem solid hsl(178deg, 35%, 64%);
+  text-align: center;
+  display: none;
 }
 .vragen__nummer {
   color: black;
@@ -133,6 +146,23 @@ body {
   justify-content: space-between;
   list-style: none;
   font-size: 70%;
+}
+
+@media screen and (max-width: 50rem) {
+  .vragen__uitleg {
+    width: 40rem;
+  }
+  .vragen__vraag {
+    align-items: center;
+    width: 40rem;
+    flex-grow: 1;
+  }
+  .vragen__vraag > input {
+    display: block;
+  }
+  .vragen__slider {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

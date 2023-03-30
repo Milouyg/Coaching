@@ -3,6 +3,8 @@
     margin: 4rem;
     border-radius: 2rem;
     box-shadow: 0 0 1rem 1rem map-get(colors.$colors,"background");
+    display: flex;
+    flex-direction: column;
     &__uitleg {
         width: 70rem;
         height: 25rem;
@@ -17,7 +19,7 @@
     }
     &__vraag {
         width: 70rem;
-        max-height: 25rem;
+        max-height: 35rem;
         list-style: none;
         padding: 2rem;
         display: flex;
@@ -28,6 +30,7 @@
         flex-shrink: 1;
         color: black;
         border-bottom: 0.3rem solid map-get(colors.$colors,"background");
+        opacity: 0.5;
         &:nth-of-type(41) {
             border-radius: 0 0 2rem 2rem;
         }
@@ -36,10 +39,20 @@
             box-shadow: 0 0 1rem 1rem map-get(colors.$colors,"background");
             z-index: 1;
             position: relative;
+            opacity: 1;
         }
 
         &--active .vragen__slider{
             display: flex;
+        }
+        & > input{
+            width: 20rem;
+            height: 8rem;
+            font-size: 200%;
+            border-radius: 2rem;
+            border: 0.3rem solid map-get(colors.$colors,"background");
+            text-align: center;
+            display: none;
         }
     }
 

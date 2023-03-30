@@ -1,0 +1,18 @@
+@media screen and (max-width: 50rem) {
+    .vragen{
+        &__uitleg{
+            width: 40rem;
+        }
+        &__vraag{
+            align-items: center;
+            width: 40rem;
+            flex-grow: 1;
+            & > input{
+                display: block;
+            }
+        }
+        &__slider{
+            display: none !important;
+        }
+    }
+}
