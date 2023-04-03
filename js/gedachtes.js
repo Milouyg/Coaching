@@ -10,6 +10,7 @@ class Gedachtes {
     gedachteButton;
     gedachteFigureTextarea;
     gedachteTextarea;
+    gedachteInput
 
     cardContent;
     // Modaal
@@ -40,34 +41,76 @@ class Gedachtes {
 
     generateCards(amount) {
         for (let i = 0; i < amount; i++) {
-            this.gedachteLi = document.createElement("li");
-            this.gedachteLi.classList = "gedachte__li";
-            this.gedachteLi.setAttribute("id", i);
-            this.gedachteLi.animation = "gedachtePopup";
+            if(i < 7){
+                this.gedachteLi = document.createElement("li");
+                this.gedachteLi.classList = "gedachte__li";
+                this.gedachteLi.setAttribute("id", i);
+                this.gedachteLi.animation = "gedachtePopup";
+    
+                this.gedachteFigure = document.createElement("figure");
+                this.gedachteFigure.classList = "gedachte__figure gedachte__figure--head";
+    
+                this.gedachteH2 = document.createElement("h2");
+                this.gedachteH2.classList = "gedachte__h2";
+                this.gedachteH2.setAttribute("id", i);
+    
+                this.gedachteButton = document.createElement("button");
+                this.gedachteButton.classList = "gedachte__question";
+                this.gedachteButton.innerText = "?";
+    
+                this.gedachteFigureTextarea = document.createElement("figure");
+                this.gedachteFigureTextarea.classList = "gedachte__figure gedachte__figure--textarea";
+    
+                this.gedachteTextarea = document.createElement("textarea");
+                this.gedachteTextarea.classList = "textarea__figure";
+    
+                this.gedachtesUl.appendChild(this.gedachteLi);
+                this.gedachteLi.appendChild(this.gedachteFigure);
+                this.gedachteFigure.appendChild(this.gedachteH2);
+                this.gedachteFigure.appendChild(this.gedachteButton);
+                this.gedachteLi.appendChild(this.gedachteFigureTextarea);
+                this.gedachteFigureTextarea.appendChild(this.gedachteTextarea);
+            }
+            else{
+                this.gedachteLi = document.createElement("li");
+                this.gedachteLi.classList = "gedachte__li";
+                this.gedachteLi.setAttribute("id", i);
+                this.gedachteLi.animation = "gedachtePopup";
+    
+                this.gedachteFigureHeader = document.createElement("figure");
+                this.gedachteFigureHeader.classList = "gedachte__figure__head";
+    
+                this.gedachteH2 = document.createElement("h2");
+                this.gedachteH2.classList = "gedachte__h2";
+                this.gedachteH2.innerText = "Vul hier uw gegevens in";
 
-            this.gedachteFigure = document.createElement("figure");
-            this.gedachteFigure.classList = "gedachte__figure gedachte__figure--head";
+                this.gedachteFigureBody = document.createElement("figure");
+                this.gedachteFigureBody.classList = "gedachte__figure__body";
+                
+                this.gedachteInputFirstName = document.createElement("input");
+                this.gedachteInputFirstName.classList = "gedachte__input";
+                this.gedachteInputFirstName.setAttribute("type", "text");
+                this.gedachteInputFirstName.setAttribute("placeholder", "Vul hier uw voornaam in");
 
-            this.gedachteH2 = document.createElement("h2");
-            this.gedachteH2.classList = "gedachte__h2";
-            this.gedachteH2.setAttribute("id", i);
+                this.gedachteInputLastName = document.createElement("input");
+                this.gedachteInputLastName.classList = "gedachte__input";
+                this.gedachteInputLastName.setAttribute("type", "text");
+                this.gedachteInputLastName.setAttribute("placeholder", "Vul hier uw achternaam in");
 
-            this.gedachteButton = document.createElement("button");
-            this.gedachteButton.classList = "gedachte__question";
-            this.gedachteButton.innerText = "?";
+                this.gedachteSubmit = document.createElement("button");
+                this.gedachteSubmit.classList = "gedachte__submit";
+                this.gedachteSubmit.setAttribute("type", "submit");
+                this.gedachteSubmit.setAttribute("value", "submit");
+                this.gedachteSubmit.innerText = "Verzenden";
 
-            this.gedachteFigureTextarea = document.createElement("figure");
-            this.gedachteFigureTextarea.classList = "gedachte__figure gedachte__figure--textarea";
-
-            this.gedachteTextarea = document.createElement("textarea");
-            this.gedachteTextarea.classList = "textarea__figure";
-
-            this.gedachtesUl.appendChild(this.gedachteLi);
-            this.gedachteLi.appendChild(this.gedachteFigure);
-            this.gedachteFigure.appendChild(this.gedachteH2);
-            this.gedachteFigure.appendChild(this.gedachteButton);
-            this.gedachteLi.appendChild(this.gedachteFigureTextarea);
-            this.gedachteFigureTextarea.appendChild(this.gedachteTextarea);
+                this.gedachtesUl.appendChild(this.gedachteLi);
+                this.gedachteLi.appendChild(this.gedachteFigureHeader);
+                this.gedachteFigureHeader.appendChild(this.gedachteH2);
+                this.gedachteLi.appendChild(this.gedachteFigureBody);
+                this.gedachteFigureBody.appendChild(this.gedachteInputFirstName);
+                this.gedachteFigureBody.appendChild(this.gedachteInputLastName);
+                this.gedachteFigureBody.appendChild(this.gedachteSubmit);
+            }
         }
     }
 
@@ -96,7 +139,7 @@ class Gedachtes {
         this.placeToRender.appendChild(this.gedachtesForm);
         this.gedachtesForm.appendChild(this.gedachtesSection);
         this.gedachtesSection.appendChild(this.gedachtesUl);
-        this.generateCards(7);
+        this.generateCards(8);
         this.modaal();
 
         const textarea = document.getElementsByClassName("textarea__figure");
@@ -122,7 +165,6 @@ class Gedachtes {
             gedachteButtonX[0].addEventListener("click", (event) => {
                 event.preventDefault();
                 this.modaalFigure.classList.toggle("modaal__figure--show");
-
                 this.gedachtesForm.style.filter= "blur(0px)";
             });
         }
@@ -149,12 +191,12 @@ class Gedachtes {
         }
     }
 
-    hiddenCards() {
-        for (let i = 1; i < 7; i++) {
-            const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
-            gedachteLi.style.display = "none";
-        }
-    }
+    // hiddenCards() {
+    //     for (let i = 1; i < 8; i++) {
+    //         const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
+    //         gedachteLi.style.display = "none";
+    //     }
+    // }
 
     showCards(i) {
         const gedachteLi = document.getElementsByClassName("gedachte__li");
