@@ -95,6 +95,18 @@
     }
 }
 
+@keyframes gedachtePopup{
+    0%{
+        opacity: .5;
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
 
