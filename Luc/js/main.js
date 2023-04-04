@@ -56,6 +56,13 @@ class QuestionItem {
         this.sliderInput.setAttribute("min", "1")
         this.sliderInput.setAttribute("max", "6")
 
+        this.inputResponsive = document.createElement("input")
+        this.inputResponsive.classList = "vragen__input--responsive"
+        this.inputResponsive.setAttribute("type", "number")
+        this.inputResponsive.setAttribute("min", "1")
+        this.inputResponsive.setAttribute("max", "6")
+
+
         this.sliderNumbers = document.createElement("ul");
         this.sliderNumbers.classList = "vragen__sliderNumbers";
 
@@ -74,8 +81,7 @@ class QuestionItem {
 
         this.index = i;
         this.nextQuestionItem = nextQuestionItem;
-        this.sliderInput.addEventListener("change", this.handleSliderInput.bind(this));
-        // <input type="range" name="" id="" min="1" max="6">
+        this.sliderInput.addEventListener("change", this.handleSliderInput);
     }
     render() {
         this.questionList.appendChild(this.question);
@@ -83,7 +89,8 @@ class QuestionItem {
         this.questionInhoud.appendChild(this.questionNumber)
         this.questionInhoud.appendChild(this.questionParagraaf);
         this.question.appendChild(this.slider);
-        this.slider.appendChild(this.sliderInput)
+        this.slider.appendChild(this.sliderInput);
+        this.question.appendChild(this.inputResponsive);
         this.slider.appendChild(this.sliderNumbers);
         this.renderSliderNumbers();
     }
@@ -96,16 +103,12 @@ class QuestionItem {
         }
     }
 
-    handleSliderInput() {
-        const value = this.sliderInput.value;
-        // Find the next question item and activate it
-        const nextIndex = this.index + 1;
+    handleSliderInput = () => {
         const nextQuestionItem = this.question.nextElementSibling;
-
         if (nextQuestionItem) {
           this.question.classList.remove("vragen__vraag--active");
           nextQuestionItem.classList.add("vragen__vraag--active");
-          // Scroll to the next question item
+
           nextQuestionItem.scrollIntoView({ behavior: "smooth" });
         }
       }

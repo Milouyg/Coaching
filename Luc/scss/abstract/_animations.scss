@@ -1,8 +1,26 @@
 @keyframes popup {
     0%{
-        
+        height: 16rem;
     }
     100%{
+        height: 30rem;
+    }
+}
 
+@keyframes popup--responsive {
+    0%{
+        height: 28rem;
+    }
+    100%{
+        height: 35rem;
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

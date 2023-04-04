@@ -1,4 +1,5 @@
 @use "../abstract/colors";
+@use "../abstract/animations";
 .vragen {
     margin: 4rem;
     border-radius: 2rem;
@@ -19,7 +20,7 @@
     }
     &__vraag {
         width: 70rem;
-        max-height: 35rem;
+        height: 16rem;
         list-style: none;
         padding: 2rem;
         display: flex;
@@ -31,6 +32,7 @@
         color: black;
         border-bottom: 0.3rem solid map-get(colors.$colors,"background");
         opacity: 0.5;
+        
         &:nth-of-type(41) {
             border-radius: 0 0 2rem 2rem;
         }
@@ -40,20 +42,30 @@
             z-index: 1;
             position: relative;
             opacity: 1;
+            height: 30rem;
+            animation-name: popup;
+            animation-duration: 0.3s;
+            
         }
 
         &--active .vragen__slider{
             display: flex;
+            opacity: 1;
+            animation-name: fade-in;
+            animation-fill-mode: backwards;
+            animation-delay: 0.3s;
+            animation-duration: 0.5s;
         }
-        & > input{
-            width: 20rem;
-            height: 8rem;
-            font-size: 200%;
-            border-radius: 2rem;
-            border: 0.3rem solid map-get(colors.$colors,"background");
-            text-align: center;
-            display: none;
-        }
+        
+    }
+    &__input--responsive{
+        width: 20rem;
+        height: 8rem;
+        font-size: 200%;
+        border-radius: 2rem;
+        border: 0.3rem solid map-get(colors.$colors,"background");
+        text-align: center;
+        display: none;
     }
 
     &__nummer {
@@ -74,15 +86,9 @@
         padding: 4rem;
         gap: 2rem;
         display: none;
+        opacity: 0;
 
 
-        &--active {
-            display: flex;
-        }
-
-        &--active .vragen__vraag{
-            background: map-get(colors.$colors,"background");
-        }
 
         & > input {
             -webkit-appearance: none;

@@ -6,10 +6,24 @@
         &__vraag{
             align-items: center;
             width: 40rem;
+            height: 28rem;
             flex-grow: 1;
-            & > input{
-                display: block;
+
+            
+            &--active{
+                height: 35rem;
+                animation-name: popup--responsive;
             }
+            &--active .vragen__input--responsive{
+                display: block;
+                animation-name: fade-in;
+                animation-fill-mode: backwards;
+                animation-delay: 0.3s;
+                animation-duration: 0.5s;
+            }
+        }
+        &__input--responsive{
+            display: none;
         }
         &__slider{
             display: none !important;
