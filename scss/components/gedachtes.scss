@@ -95,6 +95,63 @@
     }
 }
 
+// Last card
+
+.gedachte__figure__head{
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gedachte__figure__body{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.gedachte__input{
+    width: 80%;
+    height: 5rem;
+    font-size: 90%;
+    text-align: center;
+    border:  .2rem solid #78BCBA;
+    border-radius: 1rem;
+    color: #78BCBA;
+}
+
+.gedachte__submit{
+    padding: .5rem;
+    background: none;
+    border:  .2rem solid #78BCBA;
+    border-radius: 1rem;
+    color: #78BCBA;
+    font-size: 75%;
+    font-weight: 800;
+
+    &:hover{
+        color: white;
+        background: #78BCBA;
+        cursor: pointer;
+    }
+}
+
+@keyframes gedachtePopup{
+    0%{
+        opacity: .5;
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
 

@@ -12,6 +12,10 @@ html {
 
 body {
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 62.5rem) {
@@ -51,6 +55,7 @@ body {
 .modaal__figure {
   display: none;
   position: absolute;
+  background: #78BCBA;
   border: #78BCBA solid 0.5rem;
   width: 32rem;
   height: 32rem;
@@ -63,7 +68,7 @@ body {
 
 .modaal__header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem 1rem;
   width: 100%;
   height: 5rem;
@@ -71,13 +76,23 @@ body {
   border-top-left-radius: 2rem;
 }
 
+.modaal__h2 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 125%;
+  text-underline-offset: 1rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.25rem;
+  text-decoration-color: white;
+}
+
 .modaal__button {
   background: none;
-  color: #78BCBA;
+  color: white;
   font-size: 100%;
   width: 3rem;
   height: 3rem;
-  border: #78BCBA solid 0.2rem;
+  border: white solid 0.2rem;
   border-radius: 50%;
 }
 .modaal__button:hover {
@@ -98,6 +113,8 @@ body {
   font-size: 90%;
   height: 75%;
   padding: 1rem;
+  background: white;
+  color: #78BCBA;
 }
 
 .gedachtes__form {
@@ -189,6 +206,59 @@ body {
 }
 .textarea__figure::placeholder {
   color: #78BCBA;
+}
+
+.gedachte__figure__head {
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gedachte__figure__body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.gedachte__input {
+  width: 80%;
+  height: 5rem;
+  font-size: 90%;
+  text-align: center;
+  border: 0.2rem solid #78BCBA;
+  border-radius: 1rem;
+  color: #78BCBA;
+}
+
+.gedachte__submit {
+  padding: 0.5rem;
+  background: none;
+  border: 0.2rem solid #78BCBA;
+  border-radius: 1rem;
+  color: #78BCBA;
+  font-size: 75%;
+  font-weight: 800;
+}
+.gedachte__submit:hover {
+  color: white;
+  background: #78BCBA;
+  cursor: pointer;
+}
+
+@keyframes gedachtePopup {
+  0% {
+    opacity: 0.5;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
