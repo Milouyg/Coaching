@@ -4,43 +4,43 @@
             "id": 0,
             "h2": "Gebeurtenis",
             "textarea": "Zo precies mogelijk: wie, met wie? wat? waar?",
-            "question" : "test1"
+            "question" : "Ik heb ruzie gehad met (naam persoon), ik voelde me verdrietig. Dit was tijdens werk."
         },
         {
             "id": 1,
             "h2": "Onhandig gevoel",
             "textarea": "Welk gevoel was geassocieerd met de gebeurtenis",
-            "question" : "test2"
+            "question" : "Ik voel me verdrietig/woedend"
         },
         {
             "id": 2,
             "h2": "Onhandig gedrag",
             "textarea": "Welk gedrag was geassocieerd met de gebeurtenis",
-            "question" : "test3"
+            "question" : "Ik gedroeg me onbeschoft"
         },
         {
             "id": 3,
             "h2": "Onhandige gedachte",
             "textarea": "Welke onhandige gedachte had je bij de gebeurtenis",
-            "question" : "test4"
+            "question" : "Het was moeilijk om mijzelf in te houden"
         },
         {
             "id": 4,
             "h2": "Handig gevoel",
             "textarea": "Welk gevoel zou je graag willen hebben",
-            "question" : "test"
+            "question" : "Dat ik me niet zo druk maakte om de situatie"
         },
         {
             "id": 5,
             "h2": "Handig gedrag",
             "textarea": "Hoe zou jij willen gedragen tijdens de gebeurtenis",
-            "question" : "test"
+            "question" : "Dat het me niks kan schelen en dat ik er niet de hele dag mee zit en gewoon vrolijk verder kan gaan"
         },
         {
             "id": 6,
             "h2": "Helpende gedachte",
-            "textarea": "Welke helpende gedachten had je bij de gebeurtenis",
-            "question" : "test"
+            "textarea": "Welke helpende gedachte had je bij de gebeurtenis",
+            "question" : "Met vrienden over de gebeurtenis praten, zodat ik mijn frustratie kan uiten en het kan loslaten"
         }
     ]
 }
