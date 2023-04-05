@@ -91,7 +91,8 @@ class Gedachtes {
                 this.gedachteFigureBody.classList = "gedachte__figure__body";
 
                 this.gedachteP = document.createElement("p");
-                this.gedachteP.innerText = "Dank u wel voor het invullen, hier kunt u uw gegevend downloaden in een pdf bestand";
+                this.gedachteP.classList = "gedachteP"; 
+                this.gedachteP.innerText = "Dank u wel voor het invullen, hier kunt u uw gegevend downloaden in een txt bestand";
 
                 this.gedachteDownloadBtn = document.createElement("button");
                 this.gedachteDownloadBtn.classList = "gedachte__downloadBtn";
@@ -189,12 +190,12 @@ class Gedachtes {
         }
     }
 
-    hiddenCards() {
-        for (let i = 1; i < 8; i++) {
-            const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
-            gedachteLi.style.display = "none";
-        }
-    }
+    // hiddenCards() {
+    //     for (let i = 1; i < 8; i++) {
+    //         const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
+    //         gedachteLi.style.display = "none";
+    //     }
+    // }
 
     showCards(i) {
         const gedachteLi = document.getElementsByClassName("gedachte__li");
