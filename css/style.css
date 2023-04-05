@@ -117,11 +117,22 @@ body {
   color: #78BCBA;
 }
 
-.gedachtes__form {
+.gedachtes__main {
   height: calc(100vh - 6rem);
   width: 100%;
   padding: 3rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gedachteUitleg {
+  width: 100%;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  color: #78BCBA;
+  padding-bottom: 2rem;
 }
 
 .gedachtes__section {
@@ -225,17 +236,7 @@ body {
   gap: 2rem;
 }
 
-.gedachte__input {
-  width: 80%;
-  height: 5rem;
-  font-size: 90%;
-  text-align: center;
-  border: 0.2rem solid #78BCBA;
-  border-radius: 1rem;
-  color: #78BCBA;
-}
-
-.gedachte__submit {
+.gedachte__downloadBtn {
   padding: 0.5rem;
   background: none;
   border: 0.2rem solid #78BCBA;
@@ -244,7 +245,7 @@ body {
   font-size: 75%;
   font-weight: 800;
 }
-.gedachte__submit:hover {
+.gedachte__downloadBtn:hover {
   color: white;
   background: #78BCBA;
   cursor: pointer;
