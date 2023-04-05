@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Succesdagboek</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
     <script src="https://kit.fontawesome.com/a8f4354635.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-   <section class="dagboek">
+   <section class="dagboek" id="js--calendar">
         <article class="dagboek__container">
             <h1 class="dagboek__heading">Dagboek Calender</h1>
             <ul class="dagboek__select">
@@ -21,7 +21,7 @@
                 <li class="dagboek__selectli dagboek__selectli--third">></li>
             </ul>
             <ul class="dagboek__list">
-                <li class="dagboek__listitem">
+                <li class="dagboek__listitem" id="js--date">
                     <p class="dagboek__dag">1</p>
                 </li>
                 <li class="dagboek__listitem">
@@ -113,6 +113,30 @@
                 </li>
                 <li class="dagboek__listitem">
                     <p class="dagboek__dag">31</p>
+                </li>
+            </ul>
+        </article>
+   </section>
+   <section class="modal" id="js--modal">
+        <article class="modal__article">
+            <ul class="modal__ul">
+                <li class="modal__li">
+                    <div class="modal__wrapper">
+                        <p class="modal__p">succes 1</p>
+                    </div>
+                    <input type="text" id="saveServer">
+                </li>
+                <li class="modal__li">
+                    <div class="modal__wrapper">
+                        <p class="modal__p">succes 2</p>
+                    </div>
+                    <input type="text">
+                </li>
+                <li class="modal__li">
+                    <div class="modal__wrapper">
+                        <p class="modal__p">succes 3</p>
+                    </div>
+                    <input type="text">
                 </li>
             </ul>
         </article>

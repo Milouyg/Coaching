@@ -1,5 +1,11 @@
 @use "../abstracts/colors";
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dagboek{
     width: 100%;
     display: flex;
@@ -35,7 +41,6 @@
     list-style: none;
     gap: 12rem;
     flex-wrap: wrap;
-   
 }
 
 
@@ -66,4 +71,72 @@
     transition: 0.2s;
     cursor: pointer;
     color: white;
+}
+
+.dagboek__headerWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+    display: none;
+}
+
+
+
+.modal--on{
+    display: block;
+}
+
+.modal__wrapper{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modal__article{
+    width: 80rem;
+    height: 80rem;
+    border: map-get(colors.$main,"primary") solid 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+
+.modal__li{
+    gap: 3rem;
+}
+
+.modal__x{
+    color: map-get(colors.$main,"primary");
+    padding: 3rem;
+    font-size: 4.5rem;
+    position: absolute;
+    top: 5%;   
+}
+
+.modal__wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    width: 50rem;
+    border-radius: 4rem;
+    border: 0.3rem solid map-get(colors.$main,"primary");
+    height: 15rem;
+    overflow-x: scroll;
+}
+
+input:focus{
+    outline: none;
 }
