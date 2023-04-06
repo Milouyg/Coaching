@@ -13,7 +13,9 @@ class Gedachtes {
     gedachteTextarea;
     gedachteInput
 
+    // Content in Json
     cardContent;
+
     // Modaal
     modaalFigure;
     modaalHeader;
@@ -44,7 +46,7 @@ class Gedachtes {
 
     generateCards(amount) {
         for (let i = 0; i < amount; i++) {
-            if (i < 7) {
+            if (i < amount - 1) {
                 this.gedachteLi = document.createElement("li");
                 this.gedachteLi.classList = "gedachte__li";
                 this.gedachteLi.setAttribute("id", i);
@@ -78,6 +80,7 @@ class Gedachtes {
                 this.gedachteLi = document.createElement("li");
                 this.gedachteLi.classList = "gedachte__li";
                 this.gedachteLi.setAttribute("id", i);
+                this.gedachteLi.style.display = "none";
                 this.gedachteLi.animation = "gedachtePopup";
 
                 this.gedachteFigureHeader = document.createElement("figure");
@@ -92,7 +95,7 @@ class Gedachtes {
 
                 this.gedachteP = document.createElement("p");
                 this.gedachteP.classList = "gedachteP"; 
-                this.gedachteP.innerText = "Dank u wel voor het invullen, hier kunt u uw gegevend downloaden in een txt bestand";
+                this.gedachteP.innerText = "Dank u wel voor het invullen, hier kunt u uw gegevens downloaden in een txt bestand";
 
                 this.gedachteDownloadBtn = document.createElement("button");
                 this.gedachteDownloadBtn.classList = "gedachte__downloadBtn";
@@ -123,7 +126,7 @@ class Gedachtes {
         this.modaalButton = document.createElement("button");
         this.modaalButton.classList = "modaal__button";
         this.modaalButton.innerText = "X";
-        this.modaalP = document.createElement("p")
+        this.modaalP = document.createElement("p");
         this.modaalP.classList = "modaalP";
 
         this.placeToRender.appendChild(this.modaalFigure);
@@ -133,19 +136,19 @@ class Gedachtes {
         this.modaalFigure.appendChild(this.modaalP);
     }
 
-    render() {
+    render(cardContent) {
         this.placeToRender.appendChild(this.gedachteMain);
         this.gedachteMain.appendChild(this.gedachteUitleg);
         this.gedachteMain.appendChild(this.gedachtesSection);
         this.gedachtesSection.appendChild(this.gedachtesUl);
-        this.generateCards(8);
+        this.generateCards(cardContent.length + 1);
         this.modaal();
 
         const textarea = document.getElementsByClassName("textarea__figure");
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < cardContent.length; i++) {
             textarea[i].addEventListener("blur", () =>
                 this.showCards(i)
-            );
+            ); 
 
             const gedachteButtonQuestion = document.getElementsByClassName("gedachte__question");
             const gedachteButtonX = document.getElementsByClassName("modaal__button");
@@ -177,25 +180,25 @@ class Gedachtes {
             }).then((data) => {
                 this.cardContent = data;
             });
-        return this.cardContent;
+        return this.cardContent["cardContents"];
     }
 
     pickUpContent(cardContent) {
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < cardContent.length; i++) {
             const gedachteH2 = document.getElementsByClassName('gedachte__h2')[i];
             const textarea = document.getElementsByClassName("textarea__figure")[i];
 
-            gedachteH2.innerText = cardContent["cardContents"][i]["h2"];
-            textarea.placeholder = cardContent["cardContents"][i]["textarea"];
+            gedachteH2.innerText = cardContent[i]["h2"];
+            textarea.placeholder = cardContent[i]["textarea"];
         }
     }
 
-    // hiddenCards() {
-    //     for (let i = 1; i < 8; i++) {
-    //         const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
-    //         gedachteLi.style.display = "none";
-    //     }
-    // }
+    hiddenCards(cardContent) {
+        for (let i = 1; i < cardContent.length; i++) {
+            const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
+            gedachteLi.style.display = "none";
+        }
+    }
 
     showCards(i) {
         const gedachteLi = document.getElementsByClassName("gedachte__li");
@@ -205,7 +208,7 @@ class Gedachtes {
     }
 
     exampleCard(cardContent, i) {
-        this.modaalP.innerText = cardContent["cardContents"][i]["question"];
+        this.modaalP.innerText = cardContent[i]["question"];
     }
 
     downloadFileInTxt() {
@@ -227,11 +230,12 @@ class Gedachtes {
 }
 
 const gedachtes = new Gedachtes("body");
-gedachtes.render();
 gedachtes.getCardContent().then((cardContent) => {
+    gedachtes.render(cardContent);
     gedachtes.pickUpContent(cardContent);
+    gedachtes.hiddenCards(cardContent);
 });
-gedachtes.hiddenCards();
+
 
 
 
