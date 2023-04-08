@@ -1,5 +1,6 @@
 @use "./abstract/colors";
 body{
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;

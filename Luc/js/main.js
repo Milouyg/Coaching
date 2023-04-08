@@ -32,7 +32,6 @@ class QuestionItem {
 
         this.question = document.createElement("li");
         this.question.classList = "vragen__vraag";
-
         
         if(i === 0){
             this.question.classList = "vragen__vraag vragen__vraag--active"
@@ -65,6 +64,7 @@ class QuestionItem {
 
         this.sliderNumbers = document.createElement("ul");
         this.sliderNumbers.classList = "vragen__sliderNumbers";
+        
 
         this.question.addEventListener("click", () => {
             // Remove active class from all questions
@@ -107,6 +107,7 @@ class QuestionItem {
         const nextQuestionItem = this.question.nextElementSibling;
         if (nextQuestionItem) {
           this.question.classList.remove("vragen__vraag--active");
+          console.log(this.question)
           nextQuestionItem.classList.add("vragen__vraag--active");
 
           nextQuestionItem.scrollIntoView({ behavior: "smooth" });

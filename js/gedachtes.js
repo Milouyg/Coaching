@@ -235,8 +235,3 @@ gedachtes.getCardContent().then((cardContent) => {
     gedachtes.pickUpContent(cardContent);
     gedachtes.hiddenCards(cardContent);
 });
-
-
-
-
-
