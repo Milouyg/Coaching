@@ -3,7 +3,7 @@
 .vragen {
     margin: 4rem;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem 1rem map-get(colors.$colors,"background");
+    box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
     display: flex;
     flex-direction: column;
     &__uitleg {
@@ -27,28 +27,27 @@
         flex-direction: column;
         gap: 2rem;
         //box-shadow: inset 0 -0.5rem 3rem 0 rgba($color: #000000, $alpha: 0.2);
-        background: white;  
+        background: white;
         flex-shrink: 1;
         color: black;
-        border-bottom: 0.3rem solid map-get(colors.$colors,"background");
+        border-bottom: 0.3rem solid map-get(colors.$colors, "background");
         opacity: 0.5;
-        
+
         &:nth-of-type(41) {
             border-radius: 0 0 2rem 2rem;
         }
         &--active {
             // background: map-get(colors.$colors,"background");
-            box-shadow: 0 0 1rem 1rem map-get(colors.$colors,"background");
+            box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
             z-index: 1;
             position: relative;
             opacity: 1;
             height: 30rem;
             animation-name: popup;
             animation-duration: 0.3s;
-            
         }
 
-        &--active .vragen__slider{
+        &--active .vragen__slider {
             display: flex;
             opacity: 1;
             animation-name: fade-in;
@@ -56,14 +55,13 @@
             animation-delay: 0.3s;
             animation-duration: 0.5s;
         }
-        
     }
-    &__input--responsive{
+    &__input--responsive {
         width: 20rem;
         height: 8rem;
         font-size: 200%;
         border-radius: 2rem;
-        border: 0.3rem solid map-get(colors.$colors,"background");
+        border: 0.3rem solid map-get(colors.$colors, "background");
         text-align: center;
         display: none;
     }
@@ -88,54 +86,50 @@
     //     display: none;
     //     opacity: 0;
 
-
-
-        & > input {
-            -webkit-appearance: none;
-            height: 1rem;
-            width: 100%;
-            border-radius: 0.5rem;
-            background: map-get(colors.$colors,"background");
-            border: 0.1rem solid rgba($color: #000000, $alpha: 0.6);
-        }
-        & > input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            background: blue;
-            color: blue;
-        }
-        & > input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: 1px solid #000000;
-            height: 36px;
-            width: 16px;
-            border-radius: 3px;
-            background: map-get(colors.$colors,"background");
-            cursor: pointer;
-            margin-top: -14px; 
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        }
-        
-        & > input[type="range"]::-moz-range-thumb {
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-            border: 1px solid #000000;
-            height: 36px;
-            width: 16px;
-            border-radius: 3px;
-            background: map-get(colors.$colors,"background");
-            cursor: pointer;
-        }
-        
-        & > input[type="range"]::-ms-thumb {
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-            border: 1px solid #000000;
-            height: 36px;
-            width: 16px;
-            border-radius: 3px;
-            background: map-get(colors.$colors,"background");
-            cursor: pointer;
-        }
+    & > input {
+        -webkit-appearance: none;
+        height: 1rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        background: map-get(colors.$colors, "background");
+        border: 0.1rem solid rgba($color: #000000, $alpha: 0.6);
+    }
+    & > input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: blue;
+        color: blue;
+    }
+    & > input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: map-get(colors.$colors, "background");
+        cursor: pointer;
+        margin-top: -14px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     }
 
+    & > input[type="range"]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: map-get(colors.$colors, "background");
+        cursor: pointer;
+    }
+
+    & > input[type="range"]::-ms-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: map-get(colors.$colors, "background");
+        cursor: pointer;
+    }
     &__sliderNumbers {
         display: flex;
         justify-content: space-between;
