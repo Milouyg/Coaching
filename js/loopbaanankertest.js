@@ -14,9 +14,12 @@ class LoopBaanAnkerTest {
     sliderInput;
     sliderNumbers;
 
+    scores;
 
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
+
+        this.scores = [];
 
         this.questionUl = document.createElement("ul");
         this.questionUl.classList = "vragen";
@@ -77,7 +80,10 @@ class LoopBaanAnkerTest {
             this.slider.appendChild(this.sliderNumbers);
             this.renderSliderNumbers();
 
-            this.sliderInput.addEventListener("mouseup", () => this.activateNextQuestion(i));
+            this.sliderInput.addEventListener("mouseup", (event) => {
+                this.activateNextQuestion(i);
+                this.saveData(event, questions, i);
+            });
         }
     }
 
@@ -98,6 +104,19 @@ class LoopBaanAnkerTest {
         }
     }
 
+    saveData(event, questions, i) {
+        const formData = { 
+            categorie: questions[i]["Categorie"], 
+            opvatting: questions[i]["Opvatting"], 
+            value: event["target"]["value"]
+        };
+        this.scores.push(formData);
+        if(i === questions.length - 1){
+            const score = new scoreStorage(this.scores);
+            score.saveScores();
+        }
+    }
+
     async getQuestionsJson() {
         await fetch("../data/loopbaanankertest.json")
             .then(function (response) {
@@ -109,8 +128,22 @@ class LoopBaanAnkerTest {
     }
 }
 
-test = new LoopBaanAnkerTest("body");
-test.getQuestionsJson().then((questionsJson) => {
-    test.render(questionsJson);
+const form = new LoopBaanAnkerTest("body");
+form.getQuestionsJson().then((questionsJson) => {
+    form.render(questionsJson);
 });
+
+
+class scoreStorage {
+    scores;
+
+    constructor(scores) {
+        this.scores = scores;
+    }
+
+    saveScores(){
+        localStorage.setItem("userAnswer", JSON.stringify(this.scores));
+        console.log(localStorage);
+    }
+}
 
