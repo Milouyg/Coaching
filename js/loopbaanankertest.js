@@ -66,6 +66,7 @@ class LoopBaanAnkerTest {
             this.sliderInput.setAttribute("type", "range");
             this.sliderInput.setAttribute("min", "1");
             this.sliderInput.setAttribute("max", "6");
+            this.sliderInput.setAttribute("value", "1")
 
             this.sliderNumbers = document.createElement("ul");
             this.sliderNumbers.classList = "vragen__sliderNumbers";
