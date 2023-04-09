@@ -21,13 +21,17 @@ class LoopBaanAnkerTest {
         this.questionUl = document.createElement("ul");
         this.questionUl.classList = "vragen";
 
+        this.questionUitlegDiv = document.createElement("div");
+        this.questionUitlegDiv.classList = "vragen__uitleg"
+
         this.questionExplanationP = document.createElement("p");
         this.questionExplanationP.classList = "vragen__paragraafUitleg";
         this.questionExplanationP.innerText = "per vraag kan geklikt worden en dan komt er een balk onderaan de vraag tevoorschijn 1 voor niet van toepassing tot 6 altijd van toepassing. 3 is zo nu en dan op mij van toepassing. antwoord op gevoel waar jij het fijnste bij voelt.";
     }
 
     render(questions) {
-        this.placeToRender.appendChild(this.questionExplanationP);
+        this.questionUl.appendChild(this.questionUitlegDiv);
+        this.questionUitlegDiv.appendChild(this.questionExplanationP)
         this.placeToRender.appendChild(this.questionUl);
         this.generateQuestions(questions);
     }
