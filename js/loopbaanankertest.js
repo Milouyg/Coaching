@@ -1,8 +1,10 @@
 class LoopBaanAnkerTest {
     placeToRender;
 
+    questionMain;
     questionUl;
     questionExplanation;
+    questionButton;
 
     questionsJson;
 
@@ -16,10 +18,20 @@ class LoopBaanAnkerTest {
 
     scores;
 
+    modalSection;
+    modalExplanation;
+    modalLi;
+    modalQuestion;
+
+    modalCheckbox;
+
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
 
         this.scores = [];
+
+        this.questionMain = document.createElement("main");
+        this.questionMain.classList = "vragen__main";
 
         this.questionUl = document.createElement("ul");
         this.questionUl.classList = "vragen";
@@ -30,12 +42,24 @@ class LoopBaanAnkerTest {
         this.questionExplanationP = document.createElement("p");
         this.questionExplanationP.classList = "vragen__paragraafUitleg";
         this.questionExplanationP.innerText = "per vraag kan geklikt worden en dan komt er een balk onderaan de vraag tevoorschijn 1 voor niet van toepassing tot 6 altijd van toepassing. 3 is zo nu en dan op mij van toepassing. antwoord op gevoel waar jij het fijnste bij voelt.";
+
+        this.questionButton = document.createElement("button");
+        this.questionButton.classList = "vragen__button";
+        this.questionButton.innerText = "Volgende vraag";
+
+        this.questionButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            this.openModal();
+            this.questionButton.remove();
+        });
     }
 
     render(questions) {
+        this.placeToRender.appendChild(this.questionMain);
+        this.questionMain.appendChild(this.questionUl);
+        this.questionMain.appendChild(this.questionButton);
         this.questionUl.appendChild(this.questionUitlegDiv);
         this.questionUitlegDiv.appendChild(this.questionExplanationP)
-        this.placeToRender.appendChild(this.questionUl);
         this.generateQuestions(questions);
     }
 
@@ -106,18 +130,79 @@ class LoopBaanAnkerTest {
     }
 
     saveData(event, questions, i) {
-        const formData = { 
-            categorie: questions[i]["Categorie"], 
-            opvatting: questions[i]["Opvatting"], 
+        const formData = {
+            categorie: questions[i]["Categorie"],
+            opvatting: questions[i]["Opvatting"],
             value: event["target"]["value"]
         };
         this.scores.push(formData);
-        if(i === questions.length - 1){
-            const score = new scoreStorage(this.scores);
-            score.saveScores();
+        if (i === questions.length - 1) {
+            this.saveScores();
         }
     }
 
+    openModal() {
+        this.modalSection = document.createElement("section");
+        this.modalSection.classList = "modal__section";
+
+        this.modalExplanation = document.createElement("p");
+        this.modalExplanation.classList = "modal__uitleg";
+        this.modalExplanation.innerText = "Kijk nu naar de antwoorden en zoek de bewering die je het hoogst gewaardeerd hebt. Kies hieruit 3 beweringen die het meest op jou van toepassing zijn. Dit kan je doen door op de knopjes te klikken, dit kent 4 punten toe.";
+
+        const dataJson = this.getScores();
+        for (let i = 0; i < dataJson.length; i++) {
+            if (dataJson[i]["value"] >= 4) {
+                this.modalLi = document.createElement("li");
+                this.modalLi.classList = "modal__li";
+
+                this.modalQuestion = document.createElement("p");
+                this.modalQuestion.classList = "modal_vraag";
+                this.modalQuestion.innerText = dataJson[i]["opvatting"];
+
+                this.modalCheckbox = document.createElement("input");
+                this.modalCheckbox.classList = "modal__input";
+                this.modalCheckbox.setAttribute("type", "checkbox");
+
+                this.modalSection.appendChild(this.modalLi);
+                this.modalLi.appendChild(this.modalQuestion);
+                this.modalLi.appendChild(this.modalCheckbox);
+
+                this.modalCheckbox.addEventListener("click", () => {
+                    this.checkboxValidation();
+                })
+            }
+        }
+        this.questionMain.appendChild(this.modalSection);
+        this.modalSection.appendChild(this.modalExplanation);
+    }
+
+    checkboxValidation(){
+        const allCheckboxes = document.querySelectorAll(".modal__input");
+        console.log(allCheckboxes);
+        let amountCheckboxChecked = 0;
+        for(let i = 0; i < allCheckboxes.length; i++){
+            if(allCheckboxes[i].checked === true){
+                amountCheckboxChecked += 1;
+            }
+        }
+        for(let i = 0; i < allCheckboxes.length; i++){
+            if(amountCheckboxChecked > 2 && !allCheckboxes[i].checked){
+                allCheckboxes[i].disabled = true;
+            }
+            else{
+                
+            }
+        }
+    }
+
+    saveScores() {
+        localStorage.setItem("userAnswer", JSON.stringify(this.scores));
+    }
+
+    getScores() {
+        return JSON.parse(localStorage.getItem("userAnswer"));
+    }
+    
     async getQuestionsJson() {
         await fetch("../data/loopbaanankertest.json")
             .then(function (response) {
@@ -135,16 +220,4 @@ form.getQuestionsJson().then((questionsJson) => {
 });
 
 
-class scoreStorage {
-    scores;
-
-    constructor(scores) {
-        this.scores = scores;
-    }
-
-    saveScores(){
-        localStorage.setItem("userAnswer", JSON.stringify(this.scores));
-        console.log(localStorage);
-    }
-}
 
