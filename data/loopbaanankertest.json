@@ -1,162 +1,204 @@
 {
-    "Opvattingen":[
-        {
-            "Categorie": "tf",
-            "Opvatting": "Ik droom ervan zo goed te zijn in wat ik doe dat er voortdurend om mijn deskundige advies wordt gevraagd."
+    "opvattingen":[
+        {   
+            "id": 0,
+            "categorie": "tf",
+            "opvatting": "Ik droom ervan zo goed te zijn in wat ik doe dat er voortdurend om mijn deskundige advies wordt gevraagd."
         },
         {
-            "Categorie": "am",
-            "Opvatting": "Ik heb de meeste voldoening in mijn werk wanneer ik de inspanningen van anderen heb kumnen verenigen en managen."
+            "id": 1,
+            "categorie": "am",
+            "opvatting": "Ik heb de meeste voldoening in mijn werk wanneer ik de inspanningen van anderen heb kumnen verenigen en managen."
         },
-        {   "Categorie": "au",
-            "Opvatting": "Ik droom ervan een loopbaan te hebben waarin ik vrij ben een taak op mijn eigen manier en volgens mijn eigen schema uit te voeren."
-        },
-        {
-            "Categorie": "ze",
-            "Opvatting": "Ik vind zekerheid en stabiliteit belangerijker van vrijheid en autonomie."
-        },
-        {
-            "Categorie": "oc",
-            "Opvatting": "Ik ben altijd op zoek naar ideeën waardoor ik mijn eigen bedrijf zou kunnen beginnen."
+        {   
+            "id": 2,
+            "categorie": "au",
+            "opvatting": "Ik droom ervan een loopbaan te hebben waarin ik vrij ben een taak op mijn eigen manier en volgens mijn eigen schema uit te voeren."
         },
         {
-            "Categorie": "dv",
-            "Opvatting": "Alleen als ik het gevoel heb een daadwerkelijke bijdrage geleverd te hebben aan het maatschappelijke welzijn, voel ik mij geslaagd in mijn loopbaan."
+            "id": 3,
+            "categorie": "ze",
+            "opvatting": "Ik vind zekerheid en stabiliteit belangerijker dan vrijheid en autonomie."
         },
         {
-            "Categorie": "ui",
-            "Opvatting": "Ik droom van een loopbaan waarin ik problemen kan oplossen of zeer uitdagende situaties het hoofd kan bieden."
+            "id": 4,
+            "categorie": "oc",
+            "opvatting": "Ik ben altijd op zoek naar ideeën waardoor ik mijn eigen bedrijf zou kunnen beginnen."
         },
         {
-            "Categorie": "ls",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan accepteren die het mij onmogelijk maakt persoonlijk en gezinstaken na te streven."
+            "id": 5,
+            "categorie": "dv",
+            "opvatting": "Alleen als ik het gevoel heb een daadwerkelijke bijdrage geleverd te hebben aan het maatschappelijke welzijn, voel ik mij geslaagd in mijn loopbaan."
         },
         {
-            "Categorie": "tf",
-            "Opvatting": "Ik voel mij alleen geslaagd in mijn loopbaan als ik mijn technische of functionele vaardigheden tot een zeer hoog competentieniveau kan ontwikkelen."
+            "id": 6,
+            "categorie": "ui",
+            "opvatting": "Ik droom van een loopbaan waarin ik problemen kan oplossen of zeer uitdagende situaties het hoofd kan bieden."
         },
         {
-            "Categorie": "am",
-            "Opvatting": "Ik droom ervan aan het hoofd te staan van een complexe organisatie en beslissingen te nemen die veel mensen beïnvloeden."
+            "id": 7,
+            "categorie": "ls",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan accepteren die het mij onmogelijk maakt persoonlijk en gezinstaken na te streven."
         },
         {
-            "Categorie": "au",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik volledig vrij ben ik het bepalen van mijn eigen taken, schema's en procedures."
+            "id": 8,
+            "categorie": "tf",
+            "opvatting": "Ik voel mij alleen geslaagd in mijn loopbaan als ik mijn technische of functionele vaardigheden tot een zeer hoog competentieniveau kan ontwikkelen."
         },
         {
-            "Categorie": "ze",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren die mijn zekerheid in de organisatie van iemand anders."
+            "id": 9,
+            "categorie": "am",
+            "opvatting": "Ik droom ervan aan het hoofd te staan van een complexe organisatie en beslissingen te nemen die veel mensen beïnvloeden."
         },
         {
-            "Categorie": "oc",
-            "Opvatting": "Ik vind het opbouwen van mijn eigen bedrijf belangerijker dan het bereiken van een hoge managementpositie in de organisatie van iemand anders."
+            "id": 10,
+            "categorie": "au",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik volledig vrij ben ik het bepalen van mijn eigen taken, schema's en procedures."
         },
         {
-            "Categorie": "dv",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik mijn talenten in dienst van anderen heb kunnen gebruiken."
+            "id": 11,
+            "categorie": "ze",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren die mijn zekerheid in de organisatie van iemand anders."
         },
         {
-            "Categorie": "ui",
-            "Opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik te maken heb met zeer moeilijke uitdagingen en deze het hoofd kan bieden."
+            "id": 12,
+            "categorie": "oc",
+            "opvatting": "Ik vind het opbouwen van mijn eigen bedrijf belangerijker dan het bereiken van een hoge managementpositie in de organisatie van iemand anders."
         },
         {
-            "Categorie": "ls",
-            "Opvatting": "Ik droom van een loopbaan waarin ik mijn persoonlijke, gezins- en arbeidsbehoeften kan verenigen."
+            "id": 13,
+            "categorie": "dv",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik mijn talenten in dienst van anderen heb kunnen gebruiken."
         },
         {
-            "Categorie": "tf",
-            "Opvatting": "Ik vind het aantrekkelijker een hogere functionele manager op mijn competentieterrein te worden dan een algemeen manager."
+            "id": 14,
+            "categorie": "ui",
+            "opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik te maken heb met zeer moeilijke uitdagingen en deze het hoofd kan bieden."
         },
         {
-            "Categorie": "am",
-            "Opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik algemeen manager in een organisatie word."
-        },
-        {   "Categorie": "au",
-            "Opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik volledige autonomie en vrijheid verwerf."
+            "id": 15,
+            "categorie": "ls",
+            "opvatting": "Ik droom van een loopbaan waarin ik mijn persoonlijke, gezins- en arbeidsbehoeften kan verenigen."
         },
         {
-            "Categorie": "ze",
-            "Opvatting": "Ik zoek een baan in een organisatie die mij een gevoel van zekerheid en stabiliteit geeft."
+            "id": 16,
+            "categorie": "tf",
+            "opvatting": "Ik vind het aantrekkelijker een hogere functionele manager op mijn competentieterrein te worden dan een algemeen manager."
         },
         {
-            "Categorie": "oc",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik iets heb kunnen opbouwen wat volledig het resultaat is van mijn eigen ideeën en inspanningen."
+            "id": 17,
+            "categorie": "am",
+            "opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik algemeen manager in een organisatie word."
+        },
+        {   
+            "id": 18,
+            "categorie": "au",
+            "opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als ik volledige autonomie en vrijheid verwerf."
         },
         {
-            "Categorie": "dv",
-            "Opvatting": "Ik vind het belangerijker mijn vaardigheden te gebruiken om de wereld aantrekkelijker te maken om in te wonen en te werken dan een hoge managementpositie te bereiken."
+            "id": 19,
+            "categorie": "ze",
+            "opvatting": "Ik zoek een baan in een organisatie die mij een gevoel van zekerheid en stabiliteit geeft."
         },
         {
-            "Categorie": "ui",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik ogenschijnlijk onoplosbare problemen heb opgelost of ogenschijnlijk onmogelijke tegenslagen heb overwonnen."
+            "id": 20,
+            "categorie": "oc",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik iets heb kunnen opbouwen wat volledig het resultaat is van mijn eigen ideeën en inspanningen."
         },
         {
-            "Categorie": "ls",
-            "Opvatting": "Ik voel me alleen geslaagd in mijn leven als ik mijn persoonlijke-, gezins- en loopbaaneisen met elkaar in evenwicht kan brengen."
+            "id": 21,
+            "categorie": "dv",
+            "opvatting": "Ik vind het belangerijker mijn vaardigheden te gebruiken om de wereld aantrekkelijker te maken om in te wonen en te werken dan een hoge managementpositie te bereiken."
         },
         {
-            "Categorie": "tf",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taakroulatie te accepteren waardoor ik mijn competentieterrein zou moeten verlaten."
+            "id": 22,
+            "categorie": "ui",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik ogenschijnlijk onoplosbare problemen heb opgelost of ogenschijnlijk onmogelijke tegenslagen heb overwonnen."
+        },
+        {
+            "id": 23,
+            "categorie": "ls",
+            "opvatting": "Ik voel me alleen geslaagd in mijn leven als ik mijn persoonlijke-, gezins- en loopbaaneisen met elkaar in evenwicht kan brengen."
+        },
+        {
+            "id": 24,
+            "categorie": "tf",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taakroulatie te accepteren waardoor ik mijn competentieterrein zou moeten verlaten."
         }, 
         {
-            "Categorie": "am",
-            "Opvatting": "Ik vind het aantrekkelijker algemeen manager te worden dan een hogere functionele manager op mijn huidige competentieterrein."
+            "id": 25,
+            "categorie": "am",
+            "opvatting": "Ik vind het aantrekkelijker algemeen manager te worden dan een hogere functionele manager op mijn huidige competentieterrein."
         },
         {
-            "Categorie": "au",
-            "Opvatting": "Een taak op mijn eigen manier doen, vrij van regels en beperkingen, vind ik belangerijker dan zekerheid."
+            "id": 26,
+            "categorie": "au",
+            "opvatting": "Een taak op mijn eigen manier doen, vrij van regels en beperkingen, vind ik belangerijker dan zekerheid."
         },
         {
-            "Categorie": "ze",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik weet dat ik volledige financiële zekerheid heb en zeker ben van mijn baan."
+            "id": 27,
+            "categorie": "ze",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik weet dat ik volledige financiële zekerheid heb en zeker ben van mijn baan."
         },
         {
-            "Categorie": "oc",
-            "Opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als het me gelukt is iets te creëren of op te bouwen wat volledig mijn eigen product of idee is."
+            "id": 28,
+            "categorie": "oc",
+            "opvatting": "Ik voel me alleen geslaagd in mijn loopbaan als het me gelukt is iets te creëren of op te bouwen wat volledig mijn eigen product of idee is."
         },
         {
-            "Categorie": "df",
-            "Opvatting": "Ik droom van een loopbaan die daadwerkelijk een bijdrage levert aan de mensheid en de maatschappij."
+            "id": 29,
+            "categorie": "df",
+            "opvatting": "Ik droom van een loopbaan die daadwerkelijk een bijdrage levert aan de mensheid en de maatschappij."
         }, 
         {
-            "Categorie": "ui",
-            "Opvatting": "Ik zoek naar kansen op het werk die in sterke mate een uitdaging vormen voor mijn probleemoplossende en/of presentatiegerichte vaardigheden."
+            "id": 30,
+            "categorie": "ui",
+            "opvatting": "Ik zoek naar kansen op het werk die in sterke mate een uitdaging vormen voor mijn probleemoplossende en/of presentatiegerichte vaardigheden."
         },
         {
-            "Categorie": "ls",
-            "Opvatting": "Ik vind het belangerijker de eisen van mijn persoonlijke en beroepsleven met elkaar in evenwicht te brengen dan een hoge managementpositie te bereiken."
+            "id": 31,
+            "categorie": "ls",
+            "opvatting": "Ik vind het belangerijker de eisen van mijn persoonlijke en beroepsleven met elkaar in evenwicht te brengen dan een hoge managementpositie te bereiken."
         },
         {
-            "Categorie": "tf",
-            "Opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik mijn speciale vaardigheden en talenten kan gebruiken."
+            "id": 32,
+            "categorie": "tf",
+            "opvatting": "Ik heb de meeste voldoening van mijn werk wanneer ik mijn speciale vaardigheden en talenten kan gebruiken."
         },
         {
-            "Categorie": "am",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor ik van het algemeen-managementspoor zou afdwalen."
+            "id": 33,
+            "categorie": "am",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor ik van het algemeen-managementspoor zou afdwalen."
         },
         {
-            "Categorie": "au",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor mijn automie en vrijheid zou verminderen."
+            "id": 34,
+            "categorie": "au",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor mijn automie en vrijheid zou verminderen."
         },
         {
-            "Categorie": "ze",
-            "Opvatting": "Ik droom van een loopbaan waarin ik een gevoel van zekerheid en stabiliteit ervaar."
+            "id": 35,
+            "categorie": "ze",
+            "opvatting": "Ik droom van een loopbaan waarin ik een gevoel van zekerheid en stabiliteit ervaar."
         },
         {
-            "Categorie": "oc",
-            "Opvatting": "Ik droom ervan mijn eigen bedrijf te beginnen en op te bouwen."
+            "id": 36,
+            "categorie": "oc",
+            "opvatting": "Ik droom ervan mijn eigen bedrijf te beginnen en op te bouwen."
         },
         {
-            "Categorie": "dv",
-            "Opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren waardoor ik anderen minder goed van dienst zou kunnen zijn."
+            "id": 37,
+            "categorie": "dv",
+            "opvatting": "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren waardoor ik anderen minder goed van dienst zou kunnen zijn."
         },
         {
-            "Categorie": "ui",
-            "Opvatting": "Ik vind het belangerijker aan vrijwel onoplosbare problemen te werken dan een hoge managementpositie te bereiken."
+            "id": 38,
+            "categorie": "ui",
+            "opvatting": "Ik vind het belangerijker aan vrijwel onoplosbare problemen te werken dan een hoge managementpositie te bereiken."
         },
         {
-            "Categorie": "ls",
-            "Opvatting": "Ik heb altijd gezocht naar werk dat zo mijn mogelijk invloed heeft op mijn persoonlijke of gezinszaken."
+            "id": 39,
+            "categorie": "ls",
+            "opvatting": "Ik heb altijd gezocht naar werk dat zo mijn mogelijk invloed heeft op mijn persoonlijke of gezinszaken."
         }
     ]
 }

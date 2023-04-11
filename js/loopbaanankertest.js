@@ -45,12 +45,12 @@ class LoopBaanAnkerTest {
 
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
-        this.questionButton.innerText = "Volgende vraag";
+        this.questionButton.innerText = "Volgende stap";
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
             this.openModal();
-            this.questionButton.remove();
+            // this.questionButton.remove();
         });
     }
 
@@ -82,7 +82,7 @@ class LoopBaanAnkerTest {
 
             this.questionParagraph = document.createElement("p");
             this.questionParagraph.classList = "vragen__paragraaf";
-            this.questionParagraph.innerText = questions[i]["Opvatting"];
+            this.questionParagraph.innerText = questions[i]["opvatting"];
 
             this.slider = document.createElement("div");
             this.slider.classList = "vragen__slider";
@@ -131,8 +131,9 @@ class LoopBaanAnkerTest {
 
     saveData(event, questions, i) {
         const formData = {
-            categorie: questions[i]["Categorie"],
-            opvatting: questions[i]["Opvatting"],
+            id: questions[i]["id"],
+            categorie: questions[i]["categorie"],
+            opvatting: questions[i]["opvatting"],
             value: event["target"]["value"]
         };
         this.scores.push(formData);
@@ -149,8 +150,15 @@ class LoopBaanAnkerTest {
         this.modalExplanation.classList = "modal__uitleg";
         this.modalExplanation.innerText = "Kijk nu naar de antwoorden en zoek de bewering die je het hoogst gewaardeerd hebt. Kies hieruit 3 beweringen die het meest op jou van toepassing zijn. Dit kan je doen door op de knopjes te klikken, dit kent 4 punten toe.";
 
+        this.modalButton = document.createElement("button");
+        this.modalButton.classList = "modal__button";
+        this.modalButton.innerText = "Resultaten";
+
+        this.questionMain.appendChild(this.modalSection);
+        this.modalSection.appendChild(this.modalExplanation);
 
         const dataJson = this.getScores();
+
         for (let i = 0; i < dataJson.length; i++) {
             if (dataJson[i]["value"] >= 4) {
                 this.modalLi = document.createElement("li");
@@ -163,6 +171,7 @@ class LoopBaanAnkerTest {
                 this.modalCheckbox = document.createElement("input");
                 this.modalCheckbox.classList = "modal__input";
                 this.modalCheckbox.setAttribute("type", "checkbox");
+                this.modalCheckbox.setAttribute("id", dataJson[i]["id"]);
 
                 this.modalSection.appendChild(this.modalLi);
                 this.modalLi.appendChild(this.modalQuestion);
@@ -170,29 +179,54 @@ class LoopBaanAnkerTest {
 
                 this.modalCheckbox.addEventListener("click", () => {
                     this.checkboxValidation();
-                })
+                });
             }
         }
-        this.questionMain.appendChild(this.modalSection);
-        this.modalSection.appendChild(this.modalExplanation);
+
+        this.modalSection.appendChild(this.modalButton);
+        this.modalButton.addEventListener("click", (event) => {
+            event.preventDefault()
+            this.addFourPoints(dataJson);
+
+        });
     }
 
-    checkboxValidation(){
+    checkboxValidation() {
         const allCheckboxes = document.querySelectorAll(".modal__input");
         let amountCheckboxChecked = 0;
-        for(let i = 0; i < allCheckboxes.length; i++){
-            if(allCheckboxes[i].checked === true){
+        for (let i = 0; i < allCheckboxes.length; i++) {
+            if (allCheckboxes[i].checked === true) {
                 amountCheckboxChecked += 1;
             }
         }
-        for(let i = 0; i < allCheckboxes.length; i++){
-            if(amountCheckboxChecked > 2 && !allCheckboxes[i].checked){
+        for (let i = 0; i < allCheckboxes.length; i++) {
+            if (amountCheckboxChecked > 2 && !allCheckboxes[i].checked) {
                 allCheckboxes[i].disabled = true;
             }
-            else{
+            else {
                 allCheckboxes[i].disabled = false;
             }
         }
+    }
+
+    addFourPoints(dataJson) {
+        const allCheckboxes = document.querySelectorAll(".modal__input");
+        for (let i = 0; i < allCheckboxes.length; i++) {
+            if (allCheckboxes[i].checked === true) {
+                const checkboxId = allCheckboxes[i]["id"];
+                const newDataJson = dataJson[checkboxId];
+
+                // Convert a string to a number with the + operator
+                const newValue = +newDataJson["value"] + 4;
+                dataJson["value"] = newValue;
+                this.scores.length = 0;
+                for(let x = 0; x < dataJson.length; x++){
+                    this.scores.push(dataJson[x])
+                }
+            }
+        }
+
+
     }
 
     saveScores() {
@@ -202,7 +236,7 @@ class LoopBaanAnkerTest {
     getScores() {
         return JSON.parse(localStorage.getItem("userAnswer"));
     }
-    
+
     async getQuestionsJson() {
         await fetch("../data/loopbaanankertest.json")
             .then(function (response) {
@@ -210,7 +244,7 @@ class LoopBaanAnkerTest {
             }).then((data) => {
                 this.questionsJson = data;
             });
-        return this.questionsJson["Opvattingen"];
+        return this.questionsJson["opvattingen"];
     }
 }
 
