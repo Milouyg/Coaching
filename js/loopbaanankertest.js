@@ -149,6 +149,7 @@ class LoopBaanAnkerTest {
         this.modalExplanation.classList = "modal__uitleg";
         this.modalExplanation.innerText = "Kijk nu naar de antwoorden en zoek de bewering die je het hoogst gewaardeerd hebt. Kies hieruit 3 beweringen die het meest op jou van toepassing zijn. Dit kan je doen door op de knopjes te klikken, dit kent 4 punten toe.";
 
+
         const dataJson = this.getScores();
         for (let i = 0; i < dataJson.length; i++) {
             if (dataJson[i]["value"] >= 4) {
@@ -178,7 +179,6 @@ class LoopBaanAnkerTest {
 
     checkboxValidation(){
         const allCheckboxes = document.querySelectorAll(".modal__input");
-        console.log(allCheckboxes);
         let amountCheckboxChecked = 0;
         for(let i = 0; i < allCheckboxes.length; i++){
             if(allCheckboxes[i].checked === true){
@@ -190,7 +190,7 @@ class LoopBaanAnkerTest {
                 allCheckboxes[i].disabled = true;
             }
             else{
-                
+                allCheckboxes[i].disabled = false;
             }
         }
     }
