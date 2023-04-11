@@ -15,6 +15,7 @@ body {
 }
 
 body {
+  flex-direction: column;
   font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: center;
@@ -116,17 +117,7 @@ body {
   align-items: center;
   gap: 2rem;
 }
-.vragen__slider {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: none;
-  padding: 4rem;
-  gap: 2rem;
-  display: none;
-  opacity: 0;
-}
-.vragen__slider > input {
+.vragen > input {
   -webkit-appearance: none;
   height: 1rem;
   width: 100%;
@@ -134,12 +125,12 @@ body {
   background: rgb(131, 195, 193);
   border: 0.1rem solid rgba(0, 0, 0, 0.6);
 }
-.vragen__slider > input[type=range]::-webkit-slider-thumb {
+.vragen > input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: blue;
   color: blue;
 }
-.vragen__slider > input[type=range]::-webkit-slider-thumb {
+.vragen > input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
   height: 36px;
@@ -150,7 +141,7 @@ body {
   margin-top: -14px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-.vragen__slider > input[type=range]::-moz-range-thumb {
+.vragen > input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
   height: 36px;
@@ -159,7 +150,7 @@ body {
   background: rgb(131, 195, 193);
   cursor: pointer;
 }
-.vragen__slider > input[type=range]::-ms-thumb {
+.vragen > input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
   height: 36px;
@@ -173,6 +164,11 @@ body {
   justify-content: space-between;
   list-style: none;
   font-size: 70%;
+}
+
+.chart1 {
+  height: 50rem;
+  aspect-ratio: 1;
 }
 
 @media screen and (max-width: 50rem) {
