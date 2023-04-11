@@ -126,6 +126,16 @@ body {
   align-items: center;
   gap: 2rem;
 }
+.vragen__main .vragen__slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: none;
+  padding: 4rem;
+  gap: 2rem;
+  display: none;
+  opacity: 0;
+}
 .vragen__main .vragen input {
   -webkit-appearance: none;
   height: 1rem;
