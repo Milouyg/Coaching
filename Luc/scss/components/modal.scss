@@ -1,0 +1,37 @@
+@use "../abstract/colors";
+
+.modal__section{
+    margin: 0 auto;
+    box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
+    width: 50rem;
+    border-radius: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.modal__uitleg{
+    width: 100%;
+    font-size: 90%;
+}
+
+.modal__li{
+    padding: 0rem 1rem;
+    font-size: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    width: 100%;
+    border: .2rem solid rgb(131, 195, 193);
+    border-radius: 1rem;
+}
+
+.modal__input{
+    width: 4rem;
+    height: 4rem;
+}
+

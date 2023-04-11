@@ -47,14 +47,23 @@ body {
     opacity: 1;
   }
 }
-.vragen {
+.vragen__main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.vragen__main .vragen {
   margin: 4rem;
   border-radius: 2rem;
   box-shadow: 0 0 1rem 1rem rgb(131, 195, 193);
   display: flex;
   flex-direction: column;
 }
-.vragen__uitleg {
+.vragen__main .vragen__uitleg {
   width: 70rem;
   height: 25rem;
   list-style: none;
@@ -66,7 +75,7 @@ body {
   border-radius: 2rem 2rem 0 0;
   background: white;
 }
-.vragen__vraag {
+.vragen__main .vragen__vraag {
   width: 70rem;
   height: 16rem;
   list-style: none;
@@ -80,10 +89,10 @@ body {
   border-bottom: 0.3rem solid rgb(131, 195, 193);
   opacity: 0.5;
 }
-.vragen__vraag:nth-of-type(41) {
+.vragen__main .vragen__vraag:nth-of-type(41) {
   border-radius: 0 0 2rem 2rem;
 }
-.vragen__vraag--active {
+.vragen__main .vragen__vraag--active {
   box-shadow: 0 0 1rem 1rem rgb(131, 195, 193);
   z-index: 1;
   position: relative;
@@ -92,7 +101,7 @@ body {
   animation-name: popup;
   animation-duration: 0.3s;
 }
-.vragen__vraag--active .vragen__slider {
+.vragen__main .vragen__vraag--active .vragen__slider {
   display: flex;
   opacity: 1;
   animation-name: fade-in;
@@ -100,7 +109,7 @@ body {
   animation-delay: 0.3s;
   animation-duration: 0.5s;
 }
-.vragen__input--responsive {
+.vragen__main .vragen__input--responsive {
   width: 20rem;
   height: 8rem;
   font-size: 200%;
@@ -109,10 +118,10 @@ body {
   text-align: center;
   display: none;
 }
-.vragen__nummer {
+.vragen__main .vragen__nummer {
   color: black;
 }
-.vragen__inhoud {
+.vragen__main .vragen__inhoud {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -159,7 +168,7 @@ body {
   background: rgb(131, 195, 193);
   cursor: pointer;
 }
-.vragen__sliderNumbers {
+.vragen__main .vragen__sliderNumbers {
   display: flex;
   justify-content: space-between;
   list-style: none;
