@@ -12,134 +12,128 @@
 </head>
 
 <body>
-   <section class="dagboek" id="js--calendar">
+    <section class="dagboek" id="js--calendar">
         <article class="dagboek__container">
-            <h1 class="dagboek__heading">Dagboek Calender</h1>
-            <ul class="dagboek__select">
-                <li class="dagboek__selectli dagboek__selectli--first"><</li>
-                <li class="dagboek__selectli dagboek__selectli--second">2023 <br>Maart</li>
-                <li class="dagboek__selectli dagboek__selectli--third">></li>
-            </ul>
-            <ul class="dagboek__list">
-                <li class="dagboek__listitem" id="js--date">
-                    <p class="dagboek__dag">1</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">2</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">3</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">4</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">5</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">6</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">7</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">8</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">9</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">10</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">11</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">12</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">13</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">14</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">15</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">16</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">17</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">18</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">19</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">20</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">21</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">22</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">23</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">24</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">25</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">26</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">27</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">28</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">29</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">30</p>
-                </li>
-                <li class="dagboek__listitem">
-                    <p class="dagboek__dag">31</p>
-                </li>
-            </ul>
+          <h1 class="dagboek__heading">SuccesDagboek Kalender</h1>
+          <ul class="dagboek__select">
+            <li class="dagboek__selectli dagboek__selectli--first" id="prevMonthButton">&lt;</li>
+            <li class="dagboek__selectli dagboek__selectli--second">2023 <br>April</li>
+            <li class="dagboek__selectli dagboek__selectli--third" id="nextMonthButton">&gt;</li>
+          </ul>
+          <ul class="dagboek__list" id="js--dates">
+            <li class="dagboek__listitem">
+              <p class="dagboek__dag">1</p>
+            </li>
+            <li class="dagboek__listitem">
+              <p class="dagboek__dag">2</p>
+            </li>
+            <li class="dagboek__listitem">
+              <p class="dagboek__dag">3</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">4</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">5</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">6</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">7</p>
+              </li>
+              <li class="dagboek__listitem">
+                  <p class="dagboek__dag">8</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">9</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">10</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">11</p>
+              </li>
+              <li class="dagboek__listitem">
+                  <p class="dagboek__dag">12</p>
+              </li>
+              <li class="dagboek__listitem">
+                <p class="dagboek__dag">13</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">14</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">15</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">16</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">17</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">18</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">19</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">20</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">21</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">22</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">23</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">24</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">25</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">26</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">27</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">28</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">29</p>
+            </li>
+            <li class="dagboek__listitem">
+                <p class="dagboek__dag">30</p>
+            </li>
+          </ul>
         </article>
-   </section>
-   <section class="modal" id="js--modal">
-        <article class="modal__article">
-            <ul class="modal__ul">
-                <li class="modal__li">
-                    <div class="modal__wrapper">
-                        <p class="modal__p">succes 1</p>
-                    </div>
-                    <input type="text" id="saveServer">
-                </li>
-                <li class="modal__li">
-                    <div class="modal__wrapper">
-                        <p class="modal__p">succes 2</p>
-                    </div>
-                    <input type="text">
-                </li>
-                <li class="modal__li">
-                    <div class="modal__wrapper">
-                        <p class="modal__p">succes 3</p>
-                    </div>
-                    <input type="text">
-                </li>
-            </ul>
+      </section>
+      
+      <section class="modal">
+        <article class="modal__content">
+            <button class="modal__save" type="submit">x</button>
+          <h2 class="modal__date"></h2>
+          <form class="modal__form">
+            <div class="modal__wrap">
+            <label for="modal__input1">Succes 1</label>
+            </div>
+            <input type="text" id="modal__input1" name="modal__input1">
+            <label for="modal__input2">Succes 2</label>
+            <input type="text" id="modal__input2" name="modal__input2">
+            <label for="modal__input3">Succes 3</label>
+            <input type="text" id="modal__input3" name="modal__input3">
+          </form>
         </article>
-   </section>
+    </section>
+      
+      
+    <figure class="overlay"></figure>
+          
 </body>
 </html>
