@@ -1,5 +1,6 @@
 @use "../abstract/colors";
 @use "../abstract/animations";
+@use "../abstract/mixins.scss";
 
 .vragen__main{
     position: relative;
@@ -27,7 +28,16 @@
             box-shadow: inset 0 -0.5rem 3rem 0 rgba($color: #000000, $alpha: 0.2);
             border-radius: 2rem 2rem 0 0;
             background: white;
+
         }
+
+        &__button{
+            @include mixins.button;
+        }
+
+
+
+
         &__vraag {
             width: 70rem;
             height: 16rem;

@@ -1,0 +1,20 @@
+@mixin button{
+    border: none;
+    width: 20rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+    background: #51ABA9;
+    color: white;
+    border-top-left-radius: 1.8rem;
+    border-bottom-right-radius: 1.8rem;
+    transition: 0.4s all;
+    font-size: 2rem;
+
+    
+    &:hover{
+        border-top-left-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+        border-top-right-radius: 1.8rem;
+        border-bottom-left-radius: 1.8rem;
+    }
+}

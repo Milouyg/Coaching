@@ -75,6 +75,24 @@ body {
   border-radius: 2rem 2rem 0 0;
   background: white;
 }
+.vragen__main .vragen__button {
+  border: none;
+  width: 20rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  background: #51ABA9;
+  color: white;
+  border-top-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+  transition: 0.4s all;
+  font-size: 2rem;
+}
+.vragen__main .vragen__button:hover {
+  border-top-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
+}
 .vragen__main .vragen__vraag {
   width: 70rem;
   height: 16rem;
@@ -194,6 +212,7 @@ body {
   margin: 0 auto;
   box-shadow: 0 0 1rem 1rem rgb(131, 195, 193);
   width: 50rem;
+  height: 50rem;
   border-radius: 2.5rem;
   display: flex;
   align-items: center;
@@ -201,6 +220,32 @@ body {
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 27%);
+  overflow-y: scroll;
+  background: green;
+}
+
+.modal__button {
+  border: none;
+  width: 20rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  background: #51ABA9;
+  color: white;
+  border-top-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+  transition: 0.4s all;
+  font-size: 2rem;
+}
+.modal__button:hover {
+  border-top-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
 }
 
 .modal__uitleg {
