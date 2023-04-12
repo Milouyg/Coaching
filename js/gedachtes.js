@@ -1,4 +1,12 @@
 class Gedachtes {
+    header;
+    headerUl
+    headerLiLogo;
+    headerLiNaamSchema;
+    headerFigure;
+    headerImg;
+    headerP;
+
     // Kaartjes
     placeToRender;
     gedachteMain;
@@ -29,6 +37,38 @@ class Gedachtes {
     constructor(placeToRender) {
         // We pakken hier de html body element
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
+
+        this.gedachteHeader = document.createElement("header");
+        this.gedachteHeader.classList = "header";
+
+        this.headerUl = document.createElement("ul");
+        this.headerUl.classList = "header__ul";
+
+        this.headerLiLogo = document.createElement("li");
+        this.headerLiLogo.classList = "header__li";
+
+        this.headerLiNaamSchema = document.createElement("li");
+        this.headerLiNaamSchema.classList = "header__li";
+
+        this.headerFigure = document.createElement("figure");
+        this.headerFigure.classList = "header__figure";
+
+        this.headerImg = document.createElement("img");
+        this.headerImg.classList = "header__img";
+        this.headerImg.src = "../img/doesburg-coaching.png";
+
+        this.headerP = document.createElement("p");
+        this.headerP.classList = "header__p";
+        this.headerP.innerText = "G-schema";
+
+        this.placeToRender.appendChild(this.gedachteHeader);
+        this.gedachteHeader.appendChild(this.headerUl);
+        this.headerUl.appendChild(this.headerLiLogo);
+        this.headerUl.appendChild(this.headerLiNaamSchema);
+        this.headerLiLogo.appendChild(this.headerImg);
+        
+        this.headerLiNaamSchema.appendChild(this.headerP);
+
 
         this.gedachteMain = document.createElement("main");
         this.gedachteMain.classList = "gedachtes__main";
