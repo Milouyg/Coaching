@@ -160,7 +160,7 @@ class LoopBaanAnkerTest {
         const dataJson = this.getScores();
 
         for (let i = 0; i < dataJson.length; i++) {
-            if (dataJson[i]["value"] >= 4) {
+            if (dataJson[i]["value"] > 4) {
                 this.modalLi = document.createElement("li");
                 this.modalLi.classList = "modal__li";
 
@@ -211,22 +211,23 @@ class LoopBaanAnkerTest {
 
     addFourPoints(dataJson) {
         const allCheckboxes = document.querySelectorAll(".modal__input");
+        console.log(this.scores);
         for (let i = 0; i < allCheckboxes.length; i++) {
             if (allCheckboxes[i].checked === true) {
                 const checkboxId = allCheckboxes[i]["id"];
-                const newDataJson = dataJson[checkboxId];
+                const newDataJson = dataJson[checkboxId]; 
 
                 // Convert a string to a number with the + operator
                 const newValue = +newDataJson["value"] + 4;
-                dataJson["value"] = newValue;
-                this.scores.length = 0;
-                for(let x = 0; x < dataJson.length; x++){
-                    this.scores.push(dataJson[x])
-                }
+                newDataJson["value"] = newValue;
+                
+                // this.scores.length = 0;
+
+                // for(let x = 0; x < dataJson.length; x++){
+                //     this.scores.push(dataJson[x]);
+                // }
             }
         }
-
-
     }
 
     saveScores() {
