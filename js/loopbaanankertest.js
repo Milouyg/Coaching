@@ -27,7 +27,7 @@ class LoopBaanAnkerTest {
 
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
-
+        
         this.scores = [];
 
         this.questionMain = document.createElement("main");
@@ -54,6 +54,7 @@ class LoopBaanAnkerTest {
         });
     }
 
+    // Render the main
     render(questions) {
         this.placeToRender.appendChild(this.questionMain);
         this.questionMain.appendChild(this.questionUl);
@@ -63,6 +64,7 @@ class LoopBaanAnkerTest {
         this.generateQuestions(questions);
     }
 
+    // Creating as many questions as necessary
     generateQuestions(questions) {
         for (let i = 0; i < questions.length; i++) {
 
@@ -137,11 +139,13 @@ class LoopBaanAnkerTest {
             value: event["target"]["value"]
         };
         this.scores.push(formData);
+        // Index is 39, but questions are 40
         if (i === questions.length - 1) {
             this.saveScores();
         }
     }
 
+    // Creating model here
     openModal() {
         this.modalSection = document.createElement("section");
         this.modalSection.classList = "modal__section";
@@ -157,9 +161,11 @@ class LoopBaanAnkerTest {
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
 
+        // Creating const variable, so we don't have to call the function every time
         const dataJson = this.getScores();
 
         for (let i = 0; i < dataJson.length; i++) {
+            // If the value is higer than 4, create a model li
             if (dataJson[i]["value"] > 4) {
                 this.modalLi = document.createElement("li");
                 this.modalLi.classList = "modal__li";
@@ -213,6 +219,7 @@ class LoopBaanAnkerTest {
         const allCheckboxes = document.querySelectorAll(".modal__input");
         console.log(this.scores);
         for (let i = 0; i < allCheckboxes.length; i++) {
+            // Here we check whether the checkboxes set to true and compare the checkboxes with the same id 
             if (allCheckboxes[i].checked === true) {
                 const checkboxId = allCheckboxes[i]["id"];
                 const newDataJson = dataJson[checkboxId]; 
