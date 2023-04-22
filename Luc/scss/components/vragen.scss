@@ -14,18 +14,22 @@
     .vragen {
         margin: 4rem;
         border-radius: 2rem;
-        box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
+        border: 0.2rem solid ;
         display: flex;
         flex-direction: column;
+        border: 0.5rem solid map-get(colors.$colors, "background");
+
         &__uitleg {
             width: 70rem;
-            height: 25rem;
+            height: 20rem;
             list-style: none;
             padding: 2rem;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             gap: 2rem;
-            box-shadow: inset 0 -0.5rem 3rem 0 rgba($color: #000000, $alpha: 0.2);
             border-radius: 2rem 2rem 0 0;
             background: white;
 
@@ -58,7 +62,7 @@
             }
             &--active {
                 // background: map-get(colors.$colors,"background");
-                box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
+                box-shadow: 0 0 1rem 0.5rem map-get(colors.$colors, "background");
                 z-index: 1;
                 position: relative;
                 opacity: 1;
@@ -87,7 +91,14 @@
         }
     
         &__nummer {
+            height: 10%;
             color: black;
+        }
+
+        &__paragraaf{
+            width: 100%;
+            height: 30%;
+            padding: 1rem;
         }
     
         &__inhoud {
@@ -97,11 +108,13 @@
         }
     
         &__slider {
+            width: 100%;
+            height: 60%;
             display: flex;
             justify-content: center;
             flex-direction: column;
             color: none;
-            padding: 4rem;
+            padding: 1rem;
             gap: 2rem;
             display: none;
             opacity: 0;

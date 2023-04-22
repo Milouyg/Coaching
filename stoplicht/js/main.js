@@ -78,9 +78,8 @@ class StoplichtGezicht{
         this.stoplichtTextareaActie.classList = "stoplicht__textarea";
         this.stoplichtTextareaActie.placeholder = "Actie / Maatregelen"
 
-        this.stoplichtSave = document.createElement("input")
-        this.stoplichtSave.type = "save";
-        this.stoplichtSave.value = "Save";
+        this.stoplichtSave = document.createElement("button")
+        this.stoplichtSave.innerText = "save";
         this.stoplichtSave.classList = "stoplicht__save";
 
         this.stoplichtGezichtFigure.onclick = this.stoplichtGezichtFigureClicked;

@@ -4,12 +4,11 @@
 .modal__section{
     margin: 0 auto;
     box-shadow: 0 0 1rem 1rem map-get(colors.$colors, "background");
-    width: 50rem;
-    height: 50rem;
+    width: 60rem;
+    height: 60rem;
     border-radius: 2.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
@@ -19,7 +18,7 @@
     left: 50%;
     transform: translate(-50%, 27%);
     overflow-y: scroll;
-    background: green;
+    background: white;
 }
 
 .modal__button{
@@ -28,7 +27,8 @@
 
 .modal__uitleg{
     width: 100%;
-    font-size: 90%;
+    font-size: 100%;
+    text-align: center;
 }
 
 .modal__li{
@@ -41,10 +41,53 @@
     width: 100%;
     border: .2rem solid rgb(131, 195, 193);
     border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.modal__vraag{
+    width: 90%;
+    font-size: 120%;
+}
+
+.modal__wrapper{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal__input{
-    width: 4rem;
-    height: 4rem;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid currentColor;
+    border-radius: 0.15rem;
+    transform: translateY(-0.075rem);
+    border-radius: 0.5rem;
+
+    &:checked{
+        background: map-get(colors.$colors, "background");
+    }
+
+    &::before{
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        transform: scale(0);
+        transition: 120ms trasform ease-in-out;
+        box-shadow: inset 1rem 1rem map-get(colors.$colors, "background");
+    }
+
+    &:checked::before{
+        transform: scale(1);
+    }
+}
+
+.vragen__buttonWrapper{
+    height: 10rem;
+    width: 100%;
 }
 

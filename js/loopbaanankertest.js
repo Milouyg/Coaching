@@ -27,7 +27,7 @@ class LoopBaanAnkerTest {
 
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
-        
+
         this.scores = [];
 
         this.questionMain = document.createElement("main");
@@ -43,6 +43,9 @@ class LoopBaanAnkerTest {
         this.questionExplanationP.classList = "vragen__paragraafUitleg";
         this.questionExplanationP.innerText = "per vraag kan geklikt worden en dan komt er een balk onderaan de vraag tevoorschijn 1 voor niet van toepassing tot 6 altijd van toepassing. 3 is zo nu en dan op mij van toepassing. antwoord op gevoel waar jij het fijnste bij voelt.";
 
+        this.questionButtonWrapper = document.createElement("div");
+        this.questionButtonWrapper.classList = "vragen__buttonWrapper";
+
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
@@ -54,7 +57,6 @@ class LoopBaanAnkerTest {
         });
     }
 
-    // Render the main
     render(questions) {
         this.placeToRender.appendChild(this.questionMain);
         this.questionMain.appendChild(this.questionUl);
@@ -64,7 +66,6 @@ class LoopBaanAnkerTest {
         this.generateQuestions(questions);
     }
 
-    // Creating as many questions as necessary
     generateQuestions(questions) {
         for (let i = 0; i < questions.length; i++) {
 
@@ -139,13 +140,11 @@ class LoopBaanAnkerTest {
             value: event["target"]["value"]
         };
         this.scores.push(formData);
-        // Index is 39, but questions are 40
         if (i === questions.length - 1) {
             this.saveScores();
         }
     }
 
-    // Creating model here
     openModal() {
         this.modalSection = document.createElement("section");
         this.modalSection.classList = "modal__section";
@@ -161,18 +160,19 @@ class LoopBaanAnkerTest {
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
 
-        // Creating const variable, so we don't have to call the function every time
         const dataJson = this.getScores();
 
         for (let i = 0; i < dataJson.length; i++) {
-            // If the value is higer than 4, create a model li
             if (dataJson[i]["value"] > 4) {
                 this.modalLi = document.createElement("li");
                 this.modalLi.classList = "modal__li";
 
                 this.modalQuestion = document.createElement("p");
-                this.modalQuestion.classList = "modal_vraag";
+                this.modalQuestion.classList = "modal__vraag";
                 this.modalQuestion.innerText = dataJson[i]["opvatting"];
+
+                this.modalWrapper = document.createElement("div");
+                this.modalWrapper.classList = "modal__wrapper";
 
                 this.modalCheckbox = document.createElement("input");
                 this.modalCheckbox.classList = "modal__input";
@@ -181,7 +181,8 @@ class LoopBaanAnkerTest {
 
                 this.modalSection.appendChild(this.modalLi);
                 this.modalLi.appendChild(this.modalQuestion);
-                this.modalLi.appendChild(this.modalCheckbox);
+                this.modalLi.appendChild(this.modalWrapper);
+                this.modalWrapper.appendChild(this.modalCheckbox);
 
                 this.modalCheckbox.addEventListener("click", () => {
                     this.checkboxValidation();
@@ -219,7 +220,6 @@ class LoopBaanAnkerTest {
         const allCheckboxes = document.querySelectorAll(".modal__input");
         console.log(this.scores);
         for (let i = 0; i < allCheckboxes.length; i++) {
-            // Here we check whether the checkboxes set to true and compare the checkboxes with the same id 
             if (allCheckboxes[i].checked === true) {
                 const checkboxId = allCheckboxes[i]["id"];
                 const newDataJson = dataJson[checkboxId]; 
