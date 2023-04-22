@@ -49,11 +49,12 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
+        this.questionButton.style.display = "none";
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
             this.openModal();
-            // this.questionButton.remove();
+            this.questionButton.remove();
         });
     }
 
@@ -108,7 +109,7 @@ class LoopBaanAnkerTest {
             this.slider.appendChild(this.sliderNumbers);
             this.renderSliderNumbers();
 
-            this.sliderInput.addEventListener("mouseup", (event) => {
+            this.sliderInput.addEventListener("change", (event) => {
                 this.activateNextQuestion(i);
                 this.saveData(event, questions, i);
             });
@@ -139,9 +140,14 @@ class LoopBaanAnkerTest {
             opvatting: questions[i]["opvatting"],
             value: event["target"]["value"]
         };
+        // if(this.scores.includes(formData["id"])){
+        //     console.log(this.scores)    <--------- Hier zijn we
+        // };
         this.scores.push(formData);
         if (i === questions.length - 1) {
+            this.questionButton.style.display = "block";
             this.saveScores();
+        
         }
     }
 
@@ -156,6 +162,7 @@ class LoopBaanAnkerTest {
         this.modalButton = document.createElement("button");
         this.modalButton.classList = "modal__button";
         this.modalButton.innerText = "Resultaten";
+        this.modalButton.addEventListener("click", () => window.location.href = "../Luc/index.html");
 
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
@@ -222,19 +229,15 @@ class LoopBaanAnkerTest {
         for (let i = 0; i < allCheckboxes.length; i++) {
             if (allCheckboxes[i].checked === true) {
                 const checkboxId = allCheckboxes[i]["id"];
-                const newDataJson = dataJson[checkboxId]; 
 
                 // Convert a string to a number with the + operator
-                const newValue = +newDataJson["value"] + 4;
-                newDataJson["value"] = newValue;
-                
-                // this.scores.length = 0;
-
-                // for(let x = 0; x < dataJson.length; x++){
-                //     this.scores.push(dataJson[x]);
-                // }
+                const newValue = +dataJson[checkboxId]["value"] + 4;
+                dataJson[checkboxId]["value"] = newValue;
             }
         }
+        this.scores.length = 0;
+        this.scores = dataJson;
+        this.saveScores();
     }
 
     saveScores() {
