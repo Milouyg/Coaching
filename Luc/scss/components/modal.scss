@@ -49,8 +49,16 @@
     font-size: 120%;
 }
 
+.modal__wrapperNumber{
+    width: 3rem;
+}
+
+.modal__number{
+    font-size: 2rem;
+}
+
 .modal__wrapper{
-    width: 10%;
+    width: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;

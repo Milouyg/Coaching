@@ -283,15 +283,17 @@ body {
 }
 
 .modal__wrapperNumber {
-  width: 3rem;
+  padding: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .modal__number {
-  font-size: 2rem;
+  color: red;
 }
 
 .modal__wrapper {
-  width: 3rem;
+  width: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -341,4 +343,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.ss.map */

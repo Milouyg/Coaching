@@ -49,7 +49,7 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "none";
+        this.questionButton.style.display = "block";
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -174,6 +174,13 @@ class LoopBaanAnkerTest {
                 this.modalLi = document.createElement("li");
                 this.modalLi.classList = "modal__li";
 
+                this.modalWrapperNumber = document.createElement("div");
+                this.modalWrapperNumber.classList = "modal__wrapperNumber";
+
+                this.modalNumber = document.createElement("p");
+                this.modalNumber.classList = "modal__number";
+                this.modalNumber.innerText = dataJson[i]["value"];
+
                 this.modalQuestion = document.createElement("p");
                 this.modalQuestion.classList = "modal__vraag";
                 this.modalQuestion.innerText = dataJson[i]["opvatting"];
@@ -187,6 +194,8 @@ class LoopBaanAnkerTest {
                 this.modalCheckbox.setAttribute("id", dataJson[i]["id"]);
 
                 this.modalSection.appendChild(this.modalLi);
+                this.modalLi.appendChild(this.modalWrapperNumber);
+                this.modalWrapperNumber.appendChild(this.modalNumber);
                 this.modalLi.appendChild(this.modalQuestion);
                 this.modalLi.appendChild(this.modalWrapper);
                 this.modalWrapper.appendChild(this.modalCheckbox);
