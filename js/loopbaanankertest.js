@@ -143,9 +143,9 @@ class LoopBaanAnkerTest {
         // ---------------------
         this.scores.push(formData);
         if (i === questions.length - 1) {
+            // this.clearScores();             <-------------- comment dit aan het einde weer in
             this.questionButton.style.display = "block";
             this.saveScores();
-
         }
     }
 
@@ -160,7 +160,6 @@ class LoopBaanAnkerTest {
         this.modalButton = document.createElement("button");
         this.modalButton.classList = "modal__button";
         this.modalButton.innerText = "Resultaten";
-        this.modalButton.addEventListener("click", () => new ChartWrapper(this.questionMain, this.scores, this.placeToRender));
 
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
@@ -208,7 +207,8 @@ class LoopBaanAnkerTest {
         this.modalButton.addEventListener("click", (event) => {
             event.preventDefault()
             this.addFourPoints(dataJson);
-
+            new ChartWrapper(this.questionMain, this.getScores(), this.placeToRender
+            )
         });
     }
 
@@ -243,8 +243,11 @@ class LoopBaanAnkerTest {
         }
         this.scores.length = 0;
         this.scores = dataJson;
-        console.log(this.scores)
         this.saveScores();
+    }
+
+    clearScores() {
+        localStorage.removeItem("userAnswer");
     }
 
     saveScores() {
@@ -274,7 +277,6 @@ class ChartWrapper {
 
     constructor(questionMain, scores, placeToRender) {
         questionMain.remove();
-        
         this.scores = scores;
         this.placeToRender = placeToRender;
 
@@ -288,29 +290,83 @@ class ChartWrapper {
         this.renderChart();
     }
 
-    render(){
+    render() {
         this.placeToRender.appendChild(this.article);
         this.article.appendChild(this.canvas);
     }
 
-    renderChart(scores) {
-        const config = {
-            type: "radar",
+    renderChart() {
+        new Chart(this.canvas, {
+            type: 'radar',
             data: {
-                labels: this.labels,
-                datasets: this.datasets,
+                labels: [
+                    "Technisch/functioneel (TF)",
+                    "Algemeen management (AM)",
+                    "Autonomie/onafhankelijkheid (AU)",
+                    "Zekerheid en stabiliteit (ZE)",
+                    "Ondernemingsgerichte creativiteit (OC)",
+                    "Dienstverlening/toewijding aan de zaak (DV)",
+                    "Zuivere uitdaging (UI)",
+                    "Levensstijl (LS)"
+                ],
+                datasets: [{
+                    label: 'Uitslag Loopbaanankertest',
+                    data: this.calcResults(),
+                    borderWidth: 1
+                }]
             },
-            options: {},
-        };
-
-        const chart = new Chart(
-            document.getElementById(this.id),
-            config
-        );
-
-        return chart;
+        });
     }
+
+    calcResults() {
+        let value = [
+            0, // tf
+            0, // am
+            0, // au
+            0, // ze
+            0, // oc
+            0, // dv
+            0, // ui
+            0  // ls
+        ];
+
+        for (let i = 0; i < this.scores.length; i++) {
+            // let category = this.scores[i]["categorie"];
+            // let value = this.scores[i]["value"];
+            if (this.scores[i]["categorie"] === "tf") {
+                value[0] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "am") {
+                value[1] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "au") {
+                value[2] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "ze") {
+                value[3] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "oc") {
+                value[4] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "dv") {
+                value[5] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "ui") {
+                value[6] += +this.scores[i]["value"];
+            }
+            if (this.scores[i]["categorie"] === "ls") {
+                value[7] += +this.scores[i]["value"];
+            }
+        }
+        for(let i = 0; i < value.length; i++){
+            value[i] / 5;
+        }
+        return value;
+    }
+
 }
+
+
 
 // Example usage:
 // const labels = [
