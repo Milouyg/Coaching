@@ -49,7 +49,7 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "block"; // Zet dit uit wanneer je klaar bent
+        this.questionButton.style.display = "none"; // Zet dit uit wanneer je klaar bent
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -140,10 +140,9 @@ class LoopBaanAnkerTest {
             opvatting: questions[i]["opvatting"],
             value: event["target"]["value"]
         };
-        // ---------------------
         this.scores.push(formData);
         if (i === questions.length - 1) {
-            // this.clearScores();             <-------------- comment dit aan het einde weer in
+            this.clearScores();            
             this.questionButton.style.display = "block";
             this.saveScores();
         }
@@ -363,30 +362,7 @@ class ChartWrapper {
         }
         return value;
     }
-
 }
-
-
-
-// Example usage:
-// const labels = [
-//     "Technisch/functioneel (TF)",
-//     "Algemeen management (AM)",
-//     "Autonomie/onafhankelijkheid (AU)",
-//     "Zekerheid en stabiliteit (ZE)",
-//     "Ondernemingsgerichte creativiteit (OC)",
-//     "Dienstverlening/toewijding aan de zaak (DV)",
-//     "Zuivere uitdaging (UI)",
-//     "Levensstijl (LS)"
-// ];
-
-// const data = [1100, 700, 2000, 800, 1100, 700, 2000, 1200];
-// const backgroundColors = ["#83c3c166"];
-
-// const myChart = new ChartWrapper("js--chart--1", labels, data, backgroundColors);
-// myChart.render();
-// myChart.renderChart();
-
 
 const form = new LoopBaanAnkerTest("body");
 form.getQuestionsJson().then((questionsJson) => {
