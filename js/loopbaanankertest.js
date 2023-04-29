@@ -49,7 +49,7 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "block";
+        this.questionButton.style.display = "block"; // Zet dit uit wanneer je klaar bent
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -140,14 +140,12 @@ class LoopBaanAnkerTest {
             opvatting: questions[i]["opvatting"],
             value: event["target"]["value"]
         };
-        // if(this.scores.includes(formData["id"])){
-        //     console.log(this.scores)    <--------- Hier zijn we
-        // };
+        // ---------------------
         this.scores.push(formData);
         if (i === questions.length - 1) {
             this.questionButton.style.display = "block";
             this.saveScores();
-        
+
         }
     }
 
@@ -162,7 +160,7 @@ class LoopBaanAnkerTest {
         this.modalButton = document.createElement("button");
         this.modalButton.classList = "modal__button";
         this.modalButton.innerText = "Resultaten";
-        this.modalButton.addEventListener("click", () => window.location.href = "../Luc/index.html");
+        this.modalButton.addEventListener("click", () => new ChartWrapper(this.questionMain, this.scores, this.placeToRender));
 
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
@@ -234,7 +232,6 @@ class LoopBaanAnkerTest {
 
     addFourPoints(dataJson) {
         const allCheckboxes = document.querySelectorAll(".modal__input");
-        console.log(this.scores);
         for (let i = 0; i < allCheckboxes.length; i++) {
             if (allCheckboxes[i].checked === true) {
                 const checkboxId = allCheckboxes[i]["id"];
@@ -246,6 +243,7 @@ class LoopBaanAnkerTest {
         }
         this.scores.length = 0;
         this.scores = dataJson;
+        console.log(this.scores)
         this.saveScores();
     }
 
@@ -267,6 +265,72 @@ class LoopBaanAnkerTest {
         return this.questionsJson["opvattingen"];
     }
 }
+
+class ChartWrapper {
+    scores;
+    placeToRender;
+    article;
+    canvas;
+
+    constructor(questionMain, scores, placeToRender) {
+        questionMain.remove();
+        
+        this.scores = scores;
+        this.placeToRender = placeToRender;
+
+        this.article = document.createElement("article");
+        this.article.classList = "chart1";
+
+        this.canvas = document.createElement("canvas");
+        this.canvas.setAttribute("id", "js--chart--1");
+
+        this.render();
+        this.renderChart();
+    }
+
+    render(){
+        this.placeToRender.appendChild(this.article);
+        this.article.appendChild(this.canvas);
+    }
+
+    renderChart(scores) {
+        const config = {
+            type: "radar",
+            data: {
+                labels: this.labels,
+                datasets: this.datasets,
+            },
+            options: {},
+        };
+
+        const chart = new Chart(
+            document.getElementById(this.id),
+            config
+        );
+
+        return chart;
+    }
+}
+
+// Example usage:
+// const labels = [
+//     "Technisch/functioneel (TF)",
+//     "Algemeen management (AM)",
+//     "Autonomie/onafhankelijkheid (AU)",
+//     "Zekerheid en stabiliteit (ZE)",
+//     "Ondernemingsgerichte creativiteit (OC)",
+//     "Dienstverlening/toewijding aan de zaak (DV)",
+//     "Zuivere uitdaging (UI)",
+//     "Levensstijl (LS)"
+// ];
+
+// const data = [1100, 700, 2000, 800, 1100, 700, 2000, 1200];
+// const backgroundColors = ["#83c3c166"];
+
+// const myChart = new ChartWrapper("js--chart--1", labels, data, backgroundColors);
+// myChart.render();
+// myChart.renderChart();
+
 
 const form = new LoopBaanAnkerTest("body");
 form.getQuestionsJson().then((questionsJson) => {

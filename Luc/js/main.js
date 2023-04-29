@@ -32,13 +32,14 @@ class ChartWrapper {
   
   // Example usage:
   const labels = [
-    "playstation 3",
-    "nintendo DS",
-    "playstation 4",
-    "nintendo switch",
-    "playstation 3",
-    "nintendo DS",
-    "playstation 4",
+    "Technisch/functioneel (TF)",
+    "Algemeen management (AM)",
+    "Autonomie/onafhankelijkheid (AU)",
+    "Zekerheid en stabiliteit (ZE)",
+    "Ondernemingsgerichte creativiteit (OC)",
+    "Dienstverlening/toewijding aan de zaak (DV)",
+    "Zuivere uitdaging (UI)",
+    "Levensstijl (LS)"
   ];
   
   const data = [1100, 700, 2000, 800, 1100, 700, 2000, 1200];
