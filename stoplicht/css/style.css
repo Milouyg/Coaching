@@ -241,6 +241,7 @@ body {
   padding: 1rem;
   font-size: 150%;
   resize: none;
+  color: #51ABA9;
 }
 .stoplicht__textarea::placeholder {
   color: #51ABA9;
