@@ -49,7 +49,7 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "none"; // Zet dit uit wanneer je klaar bent
+        this.questionButton.style.display = "none"; 
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -109,9 +109,15 @@ class LoopBaanAnkerTest {
             this.slider.appendChild(this.sliderNumbers);
             this.renderSliderNumbers();
 
-            this.sliderInput.addEventListener("change", (event) => {
+            this.sliderInput.addEventListener("click", (event) => {
                 this.activateNextQuestion(i);
                 this.saveData(event, questions, i);
+            });
+            // Stopped scrolling
+            this.sliderInput.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
             });
         }
     }
@@ -140,9 +146,16 @@ class LoopBaanAnkerTest {
             opvatting: questions[i]["opvatting"],
             value: event["target"]["value"]
         };
-        this.scores.push(formData);
+        const found = this.scores.findIndex(unserAnswer => unserAnswer["id"] === formData["id"]);
+        if (found !== -1) {
+            this.scores.splice(found, 1, formData);
+        }
+        else {
+            this.scores.push(formData);
+        }
+
         if (i === questions.length - 1) {
-            this.clearScores();            
+            this.clearScores();
             this.questionButton.style.display = "block";
             this.saveScores();
         }
@@ -250,6 +263,7 @@ class LoopBaanAnkerTest {
     }
 
     saveScores() {
+        // convert scores into a string and storage it in localStorage
         localStorage.setItem("userAnswer", JSON.stringify(this.scores));
     }
 
@@ -328,10 +342,8 @@ class ChartWrapper {
             0, // ui
             0  // ls
         ];
-
+        // Sums values per category
         for (let i = 0; i < this.scores.length; i++) {
-            // let category = this.scores[i]["categorie"];
-            // let value = this.scores[i]["value"];
             if (this.scores[i]["categorie"] === "tf") {
                 value[0] += +this.scores[i]["value"];
             }
@@ -357,8 +369,9 @@ class ChartWrapper {
                 value[7] += +this.scores[i]["value"];
             }
         }
-        for(let i = 0; i < value.length; i++){
-            value[i] / 5;
+        // Divide the value
+        for (let i = 0; i < value.length; i++) {
+            value[i] = value[i] / 5;
         }
         return value;
     }
