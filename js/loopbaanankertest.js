@@ -22,6 +22,7 @@ class LoopBaanAnkerTest {
     modalExplanation;
     modalLi;
     modalQuestion;
+    modalNumber;
 
     modalCheckbox;
 
@@ -49,7 +50,7 @@ class LoopBaanAnkerTest {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "none"; 
+        this.questionButton.style.display = "block"; 
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -210,7 +211,7 @@ class LoopBaanAnkerTest {
                 this.modalWrapper.appendChild(this.modalCheckbox);
 
                 this.modalCheckbox.addEventListener("click", () => {
-                    this.checkboxValidation();
+                    this.checkboxValidation(dataJson);
                 });
             }
         }
@@ -224,14 +225,20 @@ class LoopBaanAnkerTest {
         });
     }
 
-    checkboxValidation() {
+    checkboxValidation(dataJson) {
         const allCheckboxes = document.querySelectorAll(".modal__input");
         let amountCheckboxChecked = 0;
+        let modalNumber = document.getElementsByClassName("modal__number");
         for (let i = 0; i < allCheckboxes.length; i++) {
             if (allCheckboxes[i].checked === true) {
                 amountCheckboxChecked += 1;
+                modalNumber[i].textContent = +dataJson[i]["value"] + 4;
+            }
+            else{
+                modalNumber[i].textContent = +dataJson[i]["value"];
             }
         }
+        // Not more than 3 checkbox checked
         for (let i = 0; i < allCheckboxes.length; i++) {
             if (amountCheckboxChecked > 2 && !allCheckboxes[i].checked) {
                 allCheckboxes[i].disabled = true;
