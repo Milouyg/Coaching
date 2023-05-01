@@ -1,0 +1,49 @@
+@use "./abstract/colors";
+.body__loopbaanankertest{
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,white,70%, map-get(colors.$colors, "background"));
+}
+
+.main{
+    width: 100vw;
+    height: 110rem;
+    display: flex;
+
+    &__wrapper{
+        display: flex;
+        width: 100%;
+        height: 110rem;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+    &__section{
+        &--groen{
+            position: relative;
+            width: 50%;
+            height: 55rem;
+        }
+
+        &--geel{
+            position: relative;
+            width: 50%;
+            height: 55rem;
+        }
+
+        &--oranje{
+            position: relative;
+            width: 50%;
+            height: 55rem;
+        }
+
+        &--rood{
+            position: relative;
+            width: 50%;
+            height: 55rem;
+        }
+    }
+}

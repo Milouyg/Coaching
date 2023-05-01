@@ -1,9 +1,1 @@
-@use "./abstract/colors";
-body{
-    flex-direction: column;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right,white,70%, map-get(colors.$colors, "background"));
-}
+

@@ -2,8 +2,24 @@
 @use "abstract/reset";
 @use "abstract/mediaqueries";
 @use "abstract/colors";
-@use "./components/header.scss";
-@use "./components/components.scss";
-@use "./components/modaal.scss";
 
-@use "./components/gedachtes.scss";
+// styling for Gedachtes
+
+@use "./components/gedachtes/gedachtes.scss";
+@use "./components/gedachtes/header.scss";
+@use "./components/gedachtes/modaal.scss";
+
+// styling for Loopbaanankertest
+
+@use "./components/loopbaanankertest/chart.scss";
+@use "./components/loopbaanankertest/modal.scss";
+@use "./components/loopbaanankertest/vragen.scss";
+
+// styling for Dagboek
+
+@use "./components/dagboek/main.scss";
+
+// styling for Stoplicht
+
+@use "./components/stoplicht/stoplicht.scss";
+@use "./components/stoplicht/nav.scss";

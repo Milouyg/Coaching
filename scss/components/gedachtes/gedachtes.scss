@@ -1,5 +1,5 @@
-@use "../abstract/colors";
-@use "../components/components.scss";
+@use "../../abstract/colors";
+@use "../../components/gedachtes/components.scss";
 
 .gedachtes__main{
     height: calc(100vh - 6rem);

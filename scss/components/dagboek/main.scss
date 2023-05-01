@@ -1,6 +1,6 @@
-@use "../abstracts/colors";
+@use "../../abstract/colors";
 
-body{
+.body__dagboek{
     display: flex;
     justify-content: center;
     align-items: center;
