@@ -161,11 +161,15 @@ body {
 }
 
 .gedachte__li {
+  display: none;
   list-style: none;
   width: 32rem;
   height: 32rem;
   border: #78BCBA solid 0.5rem;
   border-radius: 2.5rem;
+}
+.gedachte__li:nth-child(1) {
+  display: block;
 }
 
 .gedachte__figure--head {

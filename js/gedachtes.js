@@ -1,4 +1,18 @@
-class Gedachtes {
+class getCardContent {
+    cardContent;
+
+    async getCardContent() {
+        await fetch("../data/gedachtes.json")
+            .then(function (response) {
+                return response.json();
+            }).then((data) => {
+                this.cardContent = data;
+            });
+        return this.cardContent["cardContents"];
+    }
+}
+
+class Cards {
     header;
     headerUl
     headerLiLogo;
@@ -20,16 +34,6 @@ class Gedachtes {
     gedachteFigureTextarea;
     gedachteTextarea;
     gedachteInput
-
-    // Content in Json
-    cardContent;
-
-    // Modaal
-    modaalFigure;
-    modaalHeader;
-    modaalH2;
-    modaalButton;
-    modaalP;
 
     // Kaart animatie
     animation;
@@ -66,9 +70,8 @@ class Gedachtes {
         this.headerUl.appendChild(this.headerLiLogo);
         this.headerUl.appendChild(this.headerLiNaamSchema);
         this.headerLiLogo.appendChild(this.headerImg);
-        
-        this.headerLiNaamSchema.appendChild(this.headerP);
 
+        this.headerLiNaamSchema.appendChild(this.headerP);
 
         this.gedachteMain = document.createElement("main");
         this.gedachteMain.classList = "gedachtes__main";
@@ -134,7 +137,7 @@ class Gedachtes {
                 this.gedachteFigureBody.classList = "gedachte__figure__body";
 
                 this.gedachteP = document.createElement("p");
-                this.gedachteP.classList = "gedachteP"; 
+                this.gedachteP.classList = "gedachteP";
                 this.gedachteP.innerText = "Dank u wel voor het invullen, hier kunt u uw gegevens downloaden in een txt bestand";
 
                 this.gedachteDownloadBtn = document.createElement("button");
@@ -149,13 +152,56 @@ class Gedachtes {
                 this.gedachteFigureBody.appendChild(this.gedachteDownloadBtn);
                 this.gedachteDownloadBtn.addEventListener("click", (event) => {
                     event.preventDefault();
-                    this.downloadFileInTxt();
+                    const downloadFile = new DownloadFile();
+                    downloadFile.downloadFileInTxt();
                 });
             }
         }
     }
 
-    modaal() {
+    render(cardContent) {
+        this.placeToRender.appendChild(this.gedachteMain);
+        this.gedachteMain.appendChild(this.gedachteUitleg);
+        this.gedachteMain.appendChild(this.gedachtesSection);
+        this.gedachtesSection.appendChild(this.gedachtesUl);
+        this.generateCards(cardContent.length + 1);
+    }
+
+    contentCards(cardContent) {
+        for (let i = 0; i < cardContent.length; i++) {
+            const gedachteH2 = document.getElementsByClassName('gedachte__h2')[i];
+            const textarea = document.getElementsByClassName("textarea__figure")[i];
+
+            gedachteH2.innerText = cardContent[i]["h2"];
+            textarea.placeholder = cardContent[i]["textarea"];
+        }
+    }
+
+    showCards(i) {
+        const gedachteLi = document.getElementsByClassName("gedachte__li");
+        gedachteLi[i + 1].style.display = "block";
+        gedachteLi[i + 1].style.animation = "gedachtePopup";
+        gedachteLi[i + 1].style.animationDuration = ".6s";
+    }
+
+}
+
+class Modal {
+    cards;
+    placeToRender;
+
+    modaalFigure;
+    modaalHeader;
+    modaalH2;
+    modaalButton;
+    modaalP;
+
+    constructor(cards, placeToRender) {
+        this.cards = cards;
+        this.placeToRender = document.getElementsByTagName(placeToRender)[0];
+    }
+
+    modaal(cardContent) {
         this.modaalFigure = document.createElement("figure");
         this.modaalFigure.classList = "modaal__figure";
         this.modaalHeader = document.createElement("header");
@@ -174,21 +220,12 @@ class Gedachtes {
         this.modaalHeader.appendChild(this.modaalH2);
         this.modaalHeader.appendChild(this.modaalButton);
         this.modaalFigure.appendChild(this.modaalP);
-    }
-
-    render(cardContent) {
-        this.placeToRender.appendChild(this.gedachteMain);
-        this.gedachteMain.appendChild(this.gedachteUitleg);
-        this.gedachteMain.appendChild(this.gedachtesSection);
-        this.gedachtesSection.appendChild(this.gedachtesUl);
-        this.generateCards(cardContent.length + 1);
-        this.modaal();
 
         const textarea = document.getElementsByClassName("textarea__figure");
         for (let i = 0; i < cardContent.length; i++) {
             textarea[i].addEventListener("blur", () =>
-                this.showCards(i)
-            ); 
+                this.cards.showCards(i)
+            );
 
             const gedachteButtonQuestion = document.getElementsByClassName("gedachte__question");
             const gedachteButtonX = document.getElementsByClassName("modaal__button");
@@ -196,61 +233,20 @@ class Gedachtes {
             gedachteButtonQuestion[i].addEventListener("click", (event) => {
                 event.preventDefault();
                 this.modaalFigure.classList.toggle("modaal__figure--show");
-
-                this.getCardContent().then((cardContent) => {
-                    this.exampleCard(cardContent, i);
-
-                    this.gedachteMain.style.filter = "blur(2px)";
-                });
+                this.modaalP.innerText = cardContent[i]["question"];
+                this.cards.gedachteMain.style.filter = "blur(2px)";
             });
 
             gedachteButtonX[0].addEventListener("click", (event) => {
                 event.preventDefault();
                 this.modaalFigure.classList.toggle("modaal__figure--show");
-                this.gedachteMain.style.filter = "blur(0px)";
+                this.cards.gedachteMain.style.filter = "blur(0px)";
             });
         }
     }
+}
 
-    // Haalt gedachtes.json op
-    async getCardContent() {
-        await fetch("../data/gedachtes.json")
-            .then(function (response) {
-                return response.json();
-            }).then((data) => {
-                this.cardContent = data;
-            });
-        return this.cardContent["cardContents"];
-    }
-
-    pickUpContent(cardContent) {
-        for (let i = 0; i < cardContent.length; i++) {
-            const gedachteH2 = document.getElementsByClassName('gedachte__h2')[i];
-            const textarea = document.getElementsByClassName("textarea__figure")[i];
-
-            gedachteH2.innerText = cardContent[i]["h2"];
-            textarea.placeholder = cardContent[i]["textarea"];
-        }
-    }
-
-    hiddenCards(cardContent) {
-        for (let i = 1; i < cardContent.length; i++) {
-            const gedachteLi = document.getElementsByClassName("gedachte__li")[i];
-            gedachteLi.style.display = "none";
-        }
-    }
-
-    showCards(i) {
-        const gedachteLi = document.getElementsByClassName("gedachte__li");
-        gedachteLi[i + 1].style.display = "block";
-        gedachteLi[i + 1].style.animation = "gedachtePopup";
-        gedachteLi[i + 1].style.animationDuration = ".6s";
-    }
-
-    exampleCard(cardContent, i) {
-        this.modaalP.innerText = cardContent[i]["question"];
-    }
-
+class DownloadFile {
     downloadFileInTxt() {
         const link = document.createElement("a");
         const h2 = document.querySelectorAll("h2");
@@ -262,16 +258,31 @@ class Gedachtes {
         }
         const file = new Blob([textContent], { type: "text/plain" });
         link.href = URL.createObjectURL(file);
-        link.download = "test.txt";
+        link.download = "G-schema.txt";
         link.click();
         URL.revokeObjectURL(link.href);
     }
-
 }
 
-const gedachtes = new Gedachtes("body");
-gedachtes.getCardContent().then((cardContent) => {
-    gedachtes.render(cardContent);
-    gedachtes.pickUpContent(cardContent);
-    gedachtes.hiddenCards(cardContent);
-});
+class Gedachtes {
+    getCardContent;
+    cards;
+    modal;
+    downloadFile;
+
+    constructor() {
+        this.cards = new Cards("body");
+        this.modal = new Modal(this.cards, "body");
+
+        this.getCardContent = new getCardContent();
+
+        this.getCardContent.getCardContent().then((cardContent) => {
+            this.cards.render(cardContent);
+            this.modal.modaal(cardContent);
+            this.cards.contentCards(cardContent);
+        });
+        
+    }
+}
+
+const gedachtes = new Gedachtes();

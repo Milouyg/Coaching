@@ -33,15 +33,19 @@
     justify-content: center;
     gap: 4rem;
     flex-wrap: wrap;
-
 }
 
 .gedachte__li{
+    display: none;
     list-style: none;
     width: 32rem;
     height: 32rem;
     border: #78BCBA solid .5rem;
     border-radius: components.$border-radius--gedachtes;
+
+    &:nth-child(1){
+        display: block;
+    }
 }
 
 .gedachte__figure--head{
