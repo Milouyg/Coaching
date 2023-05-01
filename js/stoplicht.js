@@ -53,7 +53,7 @@ class StoplichtGezicht{
 
         this.stoplichtGezichtImage = document.createElement("img");
         this.stoplichtGezichtImage.classList = "stoplicht__gezichtje";
-        this.stoplichtGezichtImage.src = "img/" + this.id + ".png";
+        this.stoplichtGezichtImage.src = "/img/" + this.id + ".png";
 
         this.stoplichtClose = document.createElement("article");
         this.stoplichtClose.classList = "stoplicht__article stoplicht__article--third";

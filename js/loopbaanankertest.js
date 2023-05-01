@@ -28,6 +28,7 @@ class LoopBaanAnkerTest {
 
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
+        this.placeToRender.classList = "body__loopbaanankertest";
 
         this.scores = [];
 

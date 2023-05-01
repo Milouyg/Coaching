@@ -1,3 +1,45 @@
+.body__loopbaanankertest {
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, white, 70%, rgb(131, 195, 193));
+}
+
+.main {
+  width: 100vw;
+  height: 110rem;
+  display: flex;
+}
+.main__wrapper {
+  display: flex;
+  width: 100%;
+  height: 110rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.main__section--groen {
+  position: relative;
+  width: 50%;
+  height: 55rem;
+}
+.main__section--geel {
+  position: relative;
+  width: 50%;
+  height: 55rem;
+}
+.main__section--oranje {
+  position: relative;
+  width: 50%;
+  height: 55rem;
+}
+.main__section--rood {
+  position: relative;
+  width: 50%;
+  height: 55rem;
+}
+
 *,
 *::before,
 *::after {
@@ -10,12 +52,16 @@ html {
   font-size: 62.5%;
 }
 
-body {
+.body__gedachtes {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 62.5rem) {
@@ -33,99 +79,17 @@ body {
     height: 36rem;
   }
 }
-.header {
-  background: white;
-  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 6rem;
-  display: flex;
-  padding: 1rem;
+@media screen and (max-width: 59.375rem) {
+  .vragen {
+    width: 95%;
+  }
+  .vragen__main {
+    width: 100vw;
+  }
+  .vragen__vraag {
+    width: 100%;
+  }
 }
-
-.header__ul {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header__li {
-  list-style: none;
-}
-
-.header__img {
-  width: 8rem;
-}
-
-.header__p {
-  color: #78BCBA;
-}
-
-.modaal__figure {
-  display: none;
-  position: fixed;
-  background: #78BCBA;
-  border: #78BCBA solid 0.5rem;
-  width: 32rem;
-  height: 32rem;
-  border-radius: 2.5rem;
-}
-
-.modaal__figure--show {
-  display: block;
-}
-
-.modaal__header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 1rem;
-  width: 100%;
-  height: 5rem;
-  border-top-right-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-
-.modaal__h2 {
-  color: white;
-  font-family: sans-serif;
-  font-size: 125%;
-  text-underline-offset: 1rem;
-  text-decoration: underline;
-  text-decoration-thickness: 0.25rem;
-  text-decoration-color: white;
-}
-
-.modaal__button {
-  background: none;
-  color: white;
-  font-size: 100%;
-  width: 3rem;
-  height: 3rem;
-  border: white solid 0.2rem;
-  border-radius: 50%;
-}
-.modaal__button:hover {
-  cursor: pointer;
-  background: #78BCBA;
-  color: white;
-}
-
-.modaalP {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  border: #78BCBA solid 0.5rem;
-  border-radius: 2rem;
-  margin: 2rem 0.8rem;
-  font-family: sans-serif;
-  font-size: 90%;
-  height: 75%;
-  padding: 1rem;
-  background: white;
-  color: #78BCBA;
-}
-
 .gedachtes__main {
   height: calc(100vh - 6rem);
   width: 100%;
@@ -279,6 +243,992 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.header {
+  background: white;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  padding: 1rem;
+}
+
+.header__ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__li {
+  list-style: none;
+}
+
+.header__img {
+  width: 8rem;
+}
+
+.header__p {
+  color: #78BCBA;
+}
+
+.modaal__figure {
+  display: none;
+  position: fixed;
+  background: #78BCBA;
+  border: #78BCBA solid 0.5rem;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 2.5rem;
+}
+
+.modaal__figure--show {
+  display: block;
+}
+
+.modaal__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  width: 100%;
+  height: 5rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.modaal__h2 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 125%;
+  text-underline-offset: 1rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.25rem;
+  text-decoration-color: white;
+}
+
+.modaal__button {
+  background: none;
+  color: white;
+  font-size: 100%;
+  width: 3rem;
+  height: 3rem;
+  border: white solid 0.2rem;
+  border-radius: 50%;
+}
+.modaal__button:hover {
+  cursor: pointer;
+  background: #78BCBA;
+  color: white;
+}
+
+.modaalP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  border: #78BCBA solid 0.5rem;
+  border-radius: 2rem;
+  margin: 2rem 0.8rem;
+  font-family: sans-serif;
+  font-size: 90%;
+  height: 75%;
+  padding: 1rem;
+  background: white;
+  color: #78BCBA;
+}
+
+.chart1 {
+  height: 50rem;
+  aspect-ratio: 1;
+}
+
+.modal__section {
+  margin: 0 auto;
+  box-shadow: 0 0 1rem 1rem rgb(131, 195, 193);
+  width: 60rem;
+  height: 60rem;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 27%);
+  overflow-y: scroll;
+  background: white;
+}
+
+.modal__button {
+  border: none;
+  width: 20rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  background: #51ABA9;
+  color: white;
+  border-top-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+  transition: 0.4s all;
+  font-size: 2rem;
+}
+.modal__button:hover {
+  border-top-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
+}
+
+.modal__uitleg {
+  width: 100%;
+  font-size: 100%;
+  text-align: center;
+}
+
+.modal__li {
+  padding: 0rem 1rem;
+  font-size: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  width: 100%;
+  border: 0.2rem solid rgb(131, 195, 193);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.modal__vraag {
+  width: 90%;
+  font-size: 120%;
+}
+
+.modal__wrapperNumber {
+  width: 3rem;
+}
+
+.modal__number {
+  font-size: 2rem;
+}
+
+.modal__wrapper {
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__input {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 0.15rem;
+  transform: translateY(-0.075rem);
+  border-radius: 0.5rem;
+}
+.modal__input:checked {
+  background: rgb(131, 195, 193);
+}
+.modal__input::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  transform: scale(0);
+  transition: 120ms trasform ease-in-out;
+  box-shadow: inset 1rem 1rem rgb(131, 195, 193);
+}
+.modal__input:checked::before {
+  transform: scale(1);
+}
+
+.vragen__buttonWrapper {
+  height: 10rem;
+  width: 100%;
+}
+
+@keyframes popup {
+  0% {
+    height: 16rem;
+  }
+  100% {
+    height: 30rem;
+  }
+}
+@keyframes popup--responsive {
+  0% {
+    height: 28rem;
+  }
+  100% {
+    height: 35rem;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.vragen__main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.vragen__main .vragen {
+  margin: 4rem;
+  border-radius: 2rem;
+  border: 0.2rem solid;
+  display: flex;
+  flex-direction: column;
+  border: 0.5rem solid rgb(131, 195, 193);
+}
+.vragen__main .vragen__uitleg {
+  width: 70rem;
+  height: 20rem;
+  list-style: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  border-radius: 2rem 2rem 0 0;
+  background: white;
+}
+.vragen__main .vragen__button {
+  border: none;
+  width: 20rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  background: #51ABA9;
+  color: white;
+  border-top-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+  transition: 0.4s all;
+  font-size: 2rem;
+}
+.vragen__main .vragen__button:hover {
+  border-top-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
+}
+.vragen__main .vragen__vraag {
+  width: 70rem;
+  height: 16rem;
+  list-style: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: white;
+  flex-shrink: 1;
+  color: black;
+  border-bottom: 0.3rem solid rgb(131, 195, 193);
+  opacity: 0.5;
+}
+.vragen__main .vragen__vraag:nth-of-type(41) {
+  border-radius: 0 0 2rem 2rem;
+}
+.vragen__main .vragen__vraag--active {
+  box-shadow: 0 0 1rem 0.5rem rgb(131, 195, 193);
+  z-index: 1;
+  position: relative;
+  opacity: 1;
+  height: 30rem;
+  animation-name: popup;
+  animation-duration: 0.3s;
+}
+.vragen__main .vragen__vraag--active .vragen__slider {
+  display: flex;
+  opacity: 1;
+  animation-name: fade-in;
+  animation-fill-mode: backwards;
+  animation-delay: 0.3s;
+  animation-duration: 0.5s;
+}
+.vragen__main .vragen__input--responsive {
+  width: 20rem;
+  height: 8rem;
+  font-size: 200%;
+  border-radius: 2rem;
+  border: 0.3rem solid rgb(131, 195, 193);
+  text-align: center;
+  display: none;
+}
+.vragen__main .vragen__nummer {
+  height: 10%;
+  color: black;
+}
+.vragen__main .vragen__paragraaf {
+  width: 100%;
+  height: 30%;
+  padding: 1rem;
+}
+.vragen__main .vragen__inhoud {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.vragen__main .vragen__slider {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: none;
+  padding: 1rem;
+  gap: 2rem;
+  display: none;
+  opacity: 0;
+}
+.vragen__main .vragen input {
+  -webkit-appearance: none;
+  height: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: rgb(131, 195, 193);
+  border: 0.1rem solid rgba(0, 0, 0, 0.6);
+}
+.vragen__main .vragen input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: blue;
+  color: blue;
+}
+.vragen__main .vragen input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: rgb(131, 195, 193);
+  cursor: pointer;
+  margin-top: -14px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+.vragen__main .vragen input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: rgb(131, 195, 193);
+  cursor: pointer;
+}
+.vragen__main .vragen input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: rgb(131, 195, 193);
+  cursor: pointer;
+}
+.vragen__main .vragen__sliderNumbers {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 70%;
+}
+
+.body__dagboek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dagboek {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10rem;
+}
+
+.dagboek__heading {
+  color: #62B6B7;
+  padding: 3rem;
+  font-size: 4.5rem;
+}
+
+.dagboek__container {
+  width: 55rem;
+  height: 100%;
+  border: 0.3rem solid #62B6B7;
+  border-radius: 1.5rem;
+}
+
+.dagboek__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 5rem;
+  flex-wrap: wrap;
+  padding: 4rem;
+}
+
+.dagboek__select {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 12rem;
+  flex-wrap: wrap;
+}
+
+.dagboek__selectli {
+  margin-bottom: 5rem;
+  color: #62B6B7;
+  cursor: pointer;
+}
+
+.dagboek__selectli--second {
+  text-align: center;
+}
+
+.dagboek__listitem {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  border: 0.3rem solid #62B6B7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dagboek__listitem:hover {
+  background: #62B6B7;
+  transition: 0.2s;
+  cursor: pointer;
+  color: white;
+}
+
+.dagboek__headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+  display: none;
+}
+
+.modal--on {
+  display: block;
+}
+
+.modal__wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.modal__article {
+  width: 80rem;
+  height: 80rem;
+  border: #62B6B7 solid 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.modal__li {
+  gap: 3rem;
+}
+
+.modal__x {
+  color: #62B6B7;
+  padding: 3rem;
+  font-size: 4.5rem;
+  position: absolute;
+  top: 5%;
+}
+
+.modal__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 50rem;
+  border-radius: 8rem;
+  border: 0.3rem solid #62B6B7;
+  height: 15rem;
+  overflow-x: scroll;
+}
+
+input:focus {
+  outline: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+/* Input styles */
+label {
+  display: block;
+  margin-top: 2rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4px;
+  box-sizing: border-box;
+}
+
+button {
+  color: #62B6B7;
+  background: none;
+  border: none;
+  font-size: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60rem;
+  padding: 2rem;
+  background-color: #a51212;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__date {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal__form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__form input[type=text] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.1rem;
+  border: 2px solid #62B6B7;
+  border-radius: 0.5rem;
+  color: #62B6B7;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal__form input[type=text]:focus {
+  font-size: 3rem;
+  outline: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 123, 255, 0);
+}
+
+input {
+  color: red;
+}
+
+label {
+  color: #62B6B7;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal.show {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.stoplicht--groen {
+  height: 10rem;
+  width: 10rem;
+  border: 0.3rem solid #7ABFBD;
+  border-radius: 2rem;
+  background: #afedc0;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.stoplicht--rood {
+  height: 10rem;
+  width: 10rem;
+  border: 0.3rem solid #7ABFBD;
+  border-radius: 2rem;
+  background: #ff7f83;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.stoplicht--geel {
+  height: 10rem;
+  width: 10rem;
+  border: 0.3rem solid #7ABFBD;
+  border-radius: 2rem;
+  background: #fbff99;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.stoplicht--oranje {
+  height: 10rem;
+  width: 10rem;
+  border: 0.3rem solid #7ABFBD;
+  border-radius: 2rem;
+  background: #ffda9c;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.stoplicht__nav {
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  border-top-left-radius: 1.8rem;
+  border-top-right-radius: 1.8rem;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+.stoplicht__article {
+  display: flex;
+  width: 33.3333333333%;
+  align-items: center;
+}
+.stoplicht__article--first {
+  justify-content: flex-start;
+  padding-left: 4rem;
+  animation-duration: 0.6s;
+}
+.stoplicht__article--second {
+  justify-content: center;
+}
+.stoplicht__article--third {
+  justify-content: flex-end;
+  padding-right: 4rem;
+  animation-duration: 0.6s;
+}
+.stoplicht__h2 {
+  opacity: 0;
+  animation-delay: 0.6s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  font-size: 180%;
+  font-weight: 500;
+  color: #51ABA9;
+  -webkit-text-decoration: #51ABA9 solid underline;
+  text-decoration: #51ABA9 solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+}
+.stoplicht__gevoel {
+  width: 9.7rem;
+  height: 9.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.stoplicht__gevoel:hover {
+  cursor: pointer;
+}
+.stoplicht__gezichtje {
+  object-fit: contain;
+  height: 9rem;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+}
+.stoplicht__closeButton {
+  background: transparent;
+  border: 0.2rem solid #7ABFBD;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  opacity: 0;
+  animation-delay: 0.6s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  transition: 0.4s all;
+}
+.stoplicht__closeButton:hover {
+  cursor: pointer;
+  background: white;
+}
+.stoplicht__icon {
+  font-size: 200%;
+  color: #51ABA9;
+}
+.stoplicht__form {
+  display: flex;
+  width: 0%;
+  height: 0rem;
+  padding: 4rem;
+  flex-direction: column;
+  gap: 3rem;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+.stoplicht__formContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.stoplicht__textarea {
+  height: 30rem;
+  width: 23rem;
+  border: 0.2rem solid #51ABA9;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 150%;
+  resize: none;
+  color: #51ABA9;
+}
+.stoplicht__textarea::placeholder {
+  color: #51ABA9;
+  -webkit-text-decoration: #51ABA9 solid underline;
+  text-decoration: #51ABA9 solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+}
+.stoplicht__save {
+  border: 0.2rem solid #51ABA9;
+  text-align: center;
+  background: transparent;
+  width: 10rem;
+  height: 5rem;
+  padding: 1rem;
+  font-size: 150%;
+  transition: 0.4s all;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.stoplicht__save:hover {
+  background: white;
+  color: #7ABFBD;
+}
+
+@keyframes expandStoplicht {
+  0% {
+    height: 10rem;
+    width: 10rem;
+  }
+  20% {
+    height: 10rem;
+    width: 30rem;
+  }
+  40% {
+    height: 10rem;
+    width: 55rem;
+  }
+  100% {
+    height: 55rem;
+    width: 55rem;
+  }
+}
+@keyframes closeStoplicht {
+  0% {
+    height: 55rem;
+    width: 55rem;
+  }
+  40% {
+    height: 10rem;
+    width: 50rem;
+  }
+  60% {
+    height: 10rem;
+    width: 30rem;
+  }
+  100% {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes popDown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes formPopup {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 0rem;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    height: 41.25rem;
+  }
+}
+@keyframes formDisapear {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 41.25rem;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 0rem;
+  }
+}
+.nav {
+  height: 12rem;
+  width: 100vw;
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.nav__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.nav__listItem {
+  width: 33.3333333333%;
+  display: flex;
+  align-items: center;
+}
+.nav__listItem--first {
+  justify-content: flex-start;
+}
+.nav__listItem--second {
+  justify-content: center;
+}
+.nav__listItem--third {
+  justify-content: flex-end;
+}
+.nav__h2 {
+  font-size: 250%;
+  font-weight: 400;
+  color: #7ABFBD;
+}
+.nav__naam {
+  font-size: 150%;
+  font-weight: 400;
+  color: #7ABFBD;
 }
 
 /*# sourceMappingURL=style.css.map */

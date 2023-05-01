@@ -41,6 +41,7 @@ class Cards {
     constructor(placeToRender) {
         // We pakken hier de html body element
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
+        this.placeToRender.classList = "body__gedachtes";
 
         this.gedachteHeader = document.createElement("header");
         this.gedachteHeader.classList = "header";
