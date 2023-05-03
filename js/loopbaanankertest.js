@@ -1,4 +1,22 @@
-class LoopBaanAnkerTest {
+class Json{
+    data;
+    
+    constructor(data){
+        this.data = data;
+    }
+
+    async getQuestionsJson() {
+        await fetch(this.data)
+            .then(function (response) {
+                return response.json();
+            }).then((data) => {
+                this.questionsJson = data;
+            });
+        return this.questionsJson["opvattingen"];
+    }
+}
+
+class Main {
     placeToRender;
 
     questionMain;
@@ -16,15 +34,11 @@ class LoopBaanAnkerTest {
     sliderInput;
     sliderNumbers;
 
+    modal;
+
     scores;
 
-    modalSection;
-    modalExplanation;
-    modalLi;
-    modalQuestion;
-    modalNumber;
-
-    modalCheckbox;
+    localStorage;
 
     constructor(placeToRender) {
         this.placeToRender = document.getElementsByTagName(placeToRender)[0];
@@ -34,6 +48,9 @@ class LoopBaanAnkerTest {
 
         this.questionMain = document.createElement("main");
         this.questionMain.classList = "vragen__main";
+
+        this.localStorage = new LocalStorage();
+        this.modal = new Modal(this.placeToRender, this.questionMain, this.localStorage, this.scores);
 
         this.questionUl = document.createElement("ul");
         this.questionUl.classList = "vragen";
@@ -55,7 +72,7 @@ class LoopBaanAnkerTest {
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
-            this.openModal();
+            this.modal.openModal();
             this.questionButton.remove();
         });
     }
@@ -157,12 +174,35 @@ class LoopBaanAnkerTest {
         }
 
         if (i === questions.length - 1) {
-            this.clearScores();
+            this.localStorage.clearScores();
             this.questionButton.style.display = "block";
-            this.saveScores();
+            this.localStorage.saveScores(this.scores);
         }
     }
+}
 
+class Modal{
+    placeToRender
+    questionMain;
+    localStorage
+    scores
+
+    modalSection;
+    modalExplanation;
+    modalButton;
+    modalLi;
+    modalQuestion;
+    modalNumber;
+
+    modalCheckbox;
+
+    constructor(placeToRender, questionMain, localStorage, scores){
+        this.placeToRender = placeToRender;
+        this.questionMain = questionMain;
+        this.localStorage = localStorage;
+        this.scores = scores;
+    }
+    
     openModal() {
         this.modalSection = document.createElement("section");
         this.modalSection.classList = "modal__section";
@@ -178,7 +218,8 @@ class LoopBaanAnkerTest {
         this.questionMain.appendChild(this.modalSection);
         this.modalSection.appendChild(this.modalExplanation);
 
-        const dataJson = this.getScores();
+        const dataJson = this.localStorage.getScores();
+        
 
         for (let i = 0; i < dataJson.length; i++) {
             if (dataJson[i]["value"] > 4) {
@@ -221,8 +262,7 @@ class LoopBaanAnkerTest {
         this.modalButton.addEventListener("click", (event) => {
             event.preventDefault()
             this.addFourPoints(dataJson);
-            new ChartWrapper(this.questionMain, this.getScores(), this.placeToRender
-            )
+            new ChartWrapper(this.questionMain, this.localStorage.getScores(), this.placeToRender);
         });
     }
 
@@ -263,30 +303,23 @@ class LoopBaanAnkerTest {
         }
         this.scores.length = 0;
         this.scores = dataJson;
-        this.saveScores();
+        this.localStorage.saveScores(this.scores);
     }
+}
 
+class LocalStorage{
+    
     clearScores() {
         localStorage.removeItem("userAnswer");
     }
 
-    saveScores() {
+    saveScores(scores) {
         // convert scores into a string and storage it in localStorage
-        localStorage.setItem("userAnswer", JSON.stringify(this.scores));
+        localStorage.setItem("userAnswer", JSON.stringify(scores));
     }
 
     getScores() {
         return JSON.parse(localStorage.getItem("userAnswer"));
-    }
-
-    async getQuestionsJson() {
-        await fetch("../data/loopbaanankertest.json")
-            .then(function (response) {
-                return response.json();
-            }).then((data) => {
-                this.questionsJson = data;
-            });
-        return this.questionsJson["opvattingen"];
     }
 }
 
@@ -385,10 +418,26 @@ class ChartWrapper {
     }
 }
 
-const form = new LoopBaanAnkerTest("body");
-form.getQuestionsJson().then((questionsJson) => {
-    form.render(questionsJson);
-});
+class Loopbaanankertest{
+    placeToRender;
+    main;
+    json;
+
+    constructor(placeToRender){
+        this.placeToRender = placeToRender
+
+        this.json = new Json("../data/loopbaanankertest.json");
+        this.main = new Main("body");
+        
+        this.json.getQuestionsJson().then((questionsJson) => {
+            this.main.render(questionsJson);
+        });
+    }
+}
+
+const loopbaanankertest = new Loopbaanankertest("body");
+
+
 
 
 
