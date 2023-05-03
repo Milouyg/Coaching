@@ -281,3 +281,140 @@
     }
 }
 
+@media screen and (max-width: 75rem){
+    .main{
+        &__section{
+            &--groen{
+                position: relative;
+                width: 100%;
+                height: 55rem;
+                display: flex;
+                justify-content: center;
+            }
+    
+            &--geel{
+                position: relative;
+                width: 100%;
+                height: 55rem;
+                display: flex;
+                justify-content: center;
+            }
+    
+            &--oranje{
+                position: relative;
+                width: 100%;
+                height: 55rem;
+                display: flex;
+                justify-content: center;
+            }
+    
+            &--rood{
+                position: relative;
+                width: 100%;
+                height: 55rem;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    .stoplicht{
+        &--groen{
+            height: 55rem;//original 55rem
+            width: 55rem;//original 55rem
+            position: relative;
+        }
+    
+        &--rood{
+            height: 55rem;//original 55rem
+            width: 55rem;//original 55rem
+            position: relative;
+        }
+    
+        &--geel{
+            height: 55rem;//original 55rem
+            width: 55rem;//original 55rem
+            position: relative;
+        }
+    
+        &--oranje{
+            height: 55rem;//original 55rem
+            width: 55rem;//original 55rem
+            position: relative;
+        }
+
+        &__h2{
+            opacity: 1;
+        }
+
+        &__closeButton{
+            opacity: 1;
+        }
+
+        &__form{
+            opacity: 1;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 41.25rem){
+    .stoplicht{
+        &--groen{
+            height: 55rem;//original 55rem
+            width: 100%;//original 55rem
+            position: relative;
+        }
+    
+        &--rood{
+            height: 55rem;//original 55rem
+            width: 100%;//original 55rem
+            position: relative;
+        }
+    
+        &--geel{
+            height: 55rem;//original 55rem
+            width: 100%;//original 55rem
+            position: relative;
+        }
+    
+        &--oranje{
+            height: 55rem;//original 55rem
+            width: 100%;//original 55rem
+            position: relative;
+        }
+
+        &__h2{
+            opacity: 1;
+        }
+
+        &__closeButton{
+            opacity: 1;
+        }
+
+        &__form{
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    .main{
+        &__section{
+            &--groen{
+                padding: 1rem;
+            }
+    
+            &--geel{
+                padding: 1rem;
+            }
+    
+            &--oranje{
+                padding: 1rem;
+            }
+    
+            &--rood{
+                padding: 1rem;
+            }
+        }
+    }
+}

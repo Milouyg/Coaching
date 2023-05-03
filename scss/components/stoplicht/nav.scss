@@ -45,3 +45,25 @@
         color: #7ABFBD;
     }
 }
+
+@media screen and (max-width: 41.25rem){
+    .nav{
+        padding: 1rem;
+
+        &__listItem{
+            width: calc(100% / 3 - 2rem);
+        }
+
+        &__h2{
+            font-size: 150%;
+        }
+
+        &__naam{
+            font-size: 100%;
+        }
+
+        &__img{
+            width: 60%;
+        }
+    }
+}

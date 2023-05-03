@@ -1190,6 +1190,110 @@ label {
     height: 0rem;
   }
 }
+@media screen and (max-width: 75rem) {
+  .main__section--groen {
+    position: relative;
+    width: 100%;
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+  }
+  .main__section--geel {
+    position: relative;
+    width: 100%;
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+  }
+  .main__section--oranje {
+    position: relative;
+    width: 100%;
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+  }
+  .main__section--rood {
+    position: relative;
+    width: 100%;
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+  }
+  .stoplicht--groen {
+    height: 55rem;
+    width: 55rem;
+    position: relative;
+  }
+  .stoplicht--rood {
+    height: 55rem;
+    width: 55rem;
+    position: relative;
+  }
+  .stoplicht--geel {
+    height: 55rem;
+    width: 55rem;
+    position: relative;
+  }
+  .stoplicht--oranje {
+    height: 55rem;
+    width: 55rem;
+    position: relative;
+  }
+  .stoplicht__h2 {
+    opacity: 1;
+  }
+  .stoplicht__closeButton {
+    opacity: 1;
+  }
+  .stoplicht__form {
+    opacity: 1;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 41.25rem) {
+  .stoplicht--groen {
+    height: 55rem;
+    width: 100%;
+    position: relative;
+  }
+  .stoplicht--rood {
+    height: 55rem;
+    width: 100%;
+    position: relative;
+  }
+  .stoplicht--geel {
+    height: 55rem;
+    width: 100%;
+    position: relative;
+  }
+  .stoplicht--oranje {
+    height: 55rem;
+    width: 100%;
+    position: relative;
+  }
+  .stoplicht__h2 {
+    opacity: 1;
+  }
+  .stoplicht__closeButton {
+    opacity: 1;
+  }
+  .stoplicht__form {
+    opacity: 1;
+    width: 100%;
+  }
+  .main__section--groen {
+    padding: 1rem;
+  }
+  .main__section--geel {
+    padding: 1rem;
+  }
+  .main__section--oranje {
+    padding: 1rem;
+  }
+  .main__section--rood {
+    padding: 1rem;
+  }
+}
 .nav {
   height: 12rem;
   width: 100vw;
@@ -1229,6 +1333,24 @@ label {
   font-size: 150%;
   font-weight: 400;
   color: #7ABFBD;
+}
+
+@media screen and (max-width: 41.25rem) {
+  .nav {
+    padding: 1rem;
+  }
+  .nav__listItem {
+    width: calc(33.3333333333% - 2rem);
+  }
+  .nav__h2 {
+    font-size: 150%;
+  }
+  .nav__naam {
+    font-size: 100%;
+  }
+  .nav__img {
+    width: 60%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
