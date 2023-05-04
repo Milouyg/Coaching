@@ -422,7 +422,7 @@ class Loopbaanankertest{
     json;
 
     constructor(placeToRender){
-        this.placeToRender = placeToRender
+        this.placeToRender = placeToRender;
 
         this.json = new Json("../data/loopbaanankertest.json");
         this.main = new Main("body");
