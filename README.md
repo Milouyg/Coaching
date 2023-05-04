@@ -1,7 +1,10 @@
 # Deep dive frontend M&7BO 2023
 
 ## Leden van dit project: 
-Jacob, Nabil, Milou, Luc.
+- Jacob: Stress Stoplicht
+- Nabil: Succes Dagboek
+- Milou: G-Schema
+- Luc: Loopbaanankertest
 
 ## Omschrijving
  Voor de beroepsopdracht van Deep dive frontend dienen wij een website op te leveren voor Doesburg coaching. Wij hebben ervoor gekozen om alle 4 onderdelen te realiseren en wij streven ernaar de opdracht zodanig tijdig te voltooien dat wij uiteindelijk ook werkende back-end elementen weten op te leveren. 

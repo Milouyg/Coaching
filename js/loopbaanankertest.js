@@ -373,40 +373,15 @@ class ChartWrapper {
     }
 
     calcResults() {
-        let value = [
-            0, // tf
-            0, // am
-            0, // au
-            0, // ze
-            0, // oc
-            0, // dv
-            0, // ui
-            0  // ls
-        ];
+        // ts, am, au, ze, oc, dv, ui, ls
+        let value = [0, 0, 0, 0, 0, 0, 0, 0];
+
         // Sums values per category
-        const resultsTf = this.scores.filter(score => score["categorie"] === "tf");
-        resultsTf.forEach(object => value[0] += +object["value"]);
-
-        const resultsAm = this.scores.filter(score => score["categorie"] === "am");
-        resultsAm.forEach(object => value[1] += +object["value"]);
-
-        const resultsAu = this.scores.filter(score => score["categorie"] === "au");
-        resultsAu.forEach(object => value[2] += +object["value"]);
-
-        const resultsZe = this.scores.filter(score => score["categorie"] === "ze");
-        resultsZe.forEach(object => value[3] += +object["value"]);
-
-        const resultsOc = this.scores.filter(score => score["categorie"] === "oc");
-        resultsOc.forEach(object => value[4] += +object["value"]);
-
-        const resultsDv = this.scores.filter(score => score["categorie"] === "dv");
-        resultsDv.forEach(object => value[5] += +object["value"]);
-
-        const resultsUi = this.scores.filter(score => score["categorie"] === "ui");
-        resultsUi.forEach(object => value[6] += +object["value"]);
-
-        const resultsLs = this.scores.filter(score => score["categorie"] === "ls");
-        resultsLs.forEach(object => value[7] += +object["value"]);
+        const categories = ["tf", "am", "au", "ze", "oc", "dv", "ui", "ls"];
+        for(let i = 0; i < categories.length; i++){
+            const results = this.scores.filter(score => score["categorie"] === categories[i]);
+            results.forEach(object => value[i] += +object["value"]);
+        }
 
         // Divide the value
         for (let i = 0; i < value.length; i++) {
