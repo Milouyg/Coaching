@@ -1,8 +1,13 @@
 class getCardContent {
     cardContent;
+    url;
+
+    constructor(url){
+        this.url = url;
+    }
 
     async getCardContent() {
-        await fetch("../data/gedachtes.json")
+        await fetch(this.url)
             .then(function (response) {
                 return response.json();
             }).then((data) => {
@@ -236,12 +241,14 @@ class Modal {
                 this.modaalFigure.classList.toggle("modaal__figure--show");
                 this.modaalP.innerText = cardContent[i]["question"];
                 this.cards.gedachteMain.style.filter = "blur(2px)";
+                this.cards.gedachteMain.style.pointerEvents = "none";
             });
 
             gedachteButtonX[0].addEventListener("click", (event) => {
                 event.preventDefault();
                 this.modaalFigure.classList.toggle("modaal__figure--show");
                 this.cards.gedachteMain.style.filter = "blur(0px)";
+                this.cards.gedachteMain.style.pointerEvents = "initial";
             });
         }
     }
@@ -275,14 +282,13 @@ class Gedachtes {
         this.cards = new Cards("body");
         this.modal = new Modal(this.cards, "body");
 
-        this.getCardContent = new getCardContent();
+        this.getCardContent = new getCardContent("../data/gedachtes.json");
 
         this.getCardContent.getCardContent().then((cardContent) => {
             this.cards.render(cardContent);
             this.modal.modaal(cardContent);
             this.cards.contentCards(cardContent);
         });
-        
     }
 }
 

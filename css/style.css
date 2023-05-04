@@ -431,6 +431,7 @@ body {
   border-radius: 0.15rem;
   transform: translateY(-0.075rem);
   border-radius: 0.5rem;
+  overflow: hidden;
 }
 .modal__input:checked {
   background: rgb(131, 195, 193);

@@ -1,12 +1,12 @@
 class Json{
-    data;
+    url;
     
-    constructor(data){
-        this.data = data;
+    constructor(url){
+        this.url = url;
     }
 
     async getQuestionsJson() {
-        await fetch(this.data)
+        await fetch(this.url)
             .then(function (response) {
                 return response.json();
             }).then((data) => {
@@ -384,32 +384,30 @@ class ChartWrapper {
             0  // ls
         ];
         // Sums values per category
-        for (let i = 0; i < this.scores.length; i++) {
-            if (this.scores[i]["categorie"] === "tf") {
-                value[0] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "am") {
-                value[1] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "au") {
-                value[2] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "ze") {
-                value[3] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "oc") {
-                value[4] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "dv") {
-                value[5] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "ui") {
-                value[6] += +this.scores[i]["value"];
-            }
-            if (this.scores[i]["categorie"] === "ls") {
-                value[7] += +this.scores[i]["value"];
-            }
-        }
+        const resultsTf = this.scores.filter(score => score["categorie"] === "tf");
+        resultsTf.forEach(object => value[0] += +object["value"]);
+
+        const resultsAm = this.scores.filter(score => score["categorie"] === "am");
+        resultsAm.forEach(object => value[1] += +object["value"]);
+
+        const resultsAu = this.scores.filter(score => score["categorie"] === "au");
+        resultsAu.forEach(object => value[2] += +object["value"]);
+
+        const resultsZe = this.scores.filter(score => score["categorie"] === "ze");
+        resultsZe.forEach(object => value[3] += +object["value"]);
+
+        const resultsOc = this.scores.filter(score => score["categorie"] === "oc");
+        resultsOc.forEach(object => value[4] += +object["value"]);
+
+        const resultsDv = this.scores.filter(score => score["categorie"] === "dv");
+        resultsDv.forEach(object => value[5] += +object["value"]);
+
+        const resultsUi = this.scores.filter(score => score["categorie"] === "ui");
+        resultsUi.forEach(object => value[6] += +object["value"]);
+
+        const resultsLs = this.scores.filter(score => score["categorie"] === "ls");
+        resultsLs.forEach(object => value[7] += +object["value"]);
+
         // Divide the value
         for (let i = 0; i < value.length; i++) {
             value[i] = value[i] / 5;

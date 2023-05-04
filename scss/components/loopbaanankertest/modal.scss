@@ -75,6 +75,7 @@
     border-radius: 0.15rem;
     transform: translateY(-0.075rem);
     border-radius: 0.5rem;
+    overflow: hidden;
 
     &:checked{
         background: map-get(colors.$colors, "background");
