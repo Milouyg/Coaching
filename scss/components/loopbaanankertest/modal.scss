@@ -100,3 +100,24 @@
     width: 100%;
 }
 
+
+@media screen and (max-width: 59.37rem){
+    .modal__section{
+        width: calc(100% - 2rem);
+        height: 85vh;
+        position: fixed;
+        top: -10%;
+    }
+
+    .modal__uitleg{
+        width: 100%;
+        font-size: 90%;
+        text-align: center;
+    }
+
+    .modal__vraag{
+        width: 90%;
+        font-size: 100%;
+    }
+}
+

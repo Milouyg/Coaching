@@ -79,17 +79,6 @@ body {
     height: 36rem;
   }
 }
-@media screen and (max-width: 59.375rem) {
-  .vragen {
-    width: 95%;
-  }
-  .vragen__main {
-    width: 100vw;
-  }
-  .vragen__vraag {
-    width: 100%;
-  }
-}
 .gedachtes__main {
   height: calc(100vh - 6rem);
   width: 100%;
@@ -453,6 +442,23 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 59.37rem) {
+  .modal__section {
+    width: calc(100% - 2rem);
+    height: 85vh;
+    position: fixed;
+    top: -10%;
+  }
+  .modal__uitleg {
+    width: 100%;
+    font-size: 90%;
+    text-align: center;
+  }
+  .modal__vraag {
+    width: 90%;
+    font-size: 100%;
+  }
+}
 @keyframes popup {
   0% {
     height: 16rem;
@@ -479,7 +485,7 @@ body {
 }
 .vragen__main {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   align-items: center;
@@ -644,6 +650,57 @@ body {
   font-size: 70%;
 }
 
+@media screen and (max-width: 59.37rem) {
+  .vragen__main {
+    padding: 1rem;
+  }
+  .vragen__main .vragen {
+    width: 100%;
+  }
+  .vragen__main .vragen__uitleg {
+    width: 100%;
+    height: 22rem;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    border-radius: 2rem 2rem 0 0;
+  }
+  .vragen__main .vragen__vraag {
+    width: 100%;
+    height: 16rem;
+    list-style: none;
+    padding: 2rem;
+    color: black;
+    border-bottom: 0.3rem solid rgb(131, 195, 193);
+  }
+  .vragen__main .vragen__vraag--active {
+    box-shadow: 0 0 1rem 0.5rem rgb(131, 195, 193);
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    height: 30rem;
+    animation-name: popup;
+    animation-duration: 0.3s;
+  }
+  .vragen__main .vragen__paragraaf {
+    font-size: 80%;
+    height: 30%;
+    padding: 1rem;
+  }
+  .vragen__main .vragen__paragraafUitleg {
+    font-size: 90%;
+  }
+  .vragen__main .vragen__nummer {
+    height: 8%;
+    color: black;
+    font-size: 90%;
+  }
+}
 .body__dagboek {
   display: flex;
   justify-content: center;
