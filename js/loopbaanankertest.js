@@ -68,7 +68,7 @@ class Main {
         this.questionButton = document.createElement("button");
         this.questionButton.classList = "vragen__button";
         this.questionButton.innerText = "Volgende stap";
-        this.questionButton.style.display = "none"; 
+        this.questionButton.style.display = "block"; 
 
         this.questionButton.addEventListener("click", (event) => {
             event.preventDefault();
