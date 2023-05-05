@@ -76,11 +76,15 @@ class StoplichtGezicht{
 
         this.stoplichtTextareaActie = document.createElement("textarea");
         this.stoplichtTextareaActie.classList = "stoplicht__textarea";
-        this.stoplichtTextareaActie.placeholder = "Actie / Maatregelen"
+        this.stoplichtTextareaActie.placeholder = "Actie / Maatregelen";
+
+        this.stoplichtButtonWrapper = document.createElement("article");
+        this.stoplichtButtonWrapper.classList = "stoplicht__buttonWrapper";
 
         this.stoplichtSave = document.createElement("button")
         this.stoplichtSave.innerText = "save";
         this.stoplichtSave.classList = "stoplicht__save";
+        this.stoplichtSave.onclick = this.saveButtonClicked;
 
         this.stoplichtGezichtFigure.onclick = this.stoplichtGezichtFigureClicked;
         this.stoplichtCloseButton.onclick = this.stoplichtCloseButtonClicked;
@@ -91,8 +95,10 @@ class StoplichtGezicht{
         this.stoplichtSection.style.animationName = "expandStoplicht";
         this.stoplichtGevoelText.style.animationName = "popup";
         this.stoplichtCloseButton.style.animationName = "popup";
+        this.stoplichtSave.style.animationName = "popup";
+        this.stoplichtSave.style.animationDelay = "1.2s";
         this.stoplichtForms.style.animationName = "formPopup";
-        this.stoplichtForms.style.animationDelay = "1.2s";
+        this.stoplichtForms.style.animationDelay = "0.6s";
         this.stoplichtForms.style.animationDuration = "1.2s";
     }
 
@@ -100,9 +106,16 @@ class StoplichtGezicht{
         this.stoplichtSection.style.animationName = "closeStoplicht";
         this.stoplichtGevoelText.style.animationName = "popDown";
         this.stoplichtCloseButton.style.animationName = "popDown";
+        this.stoplichtSave.style.animationName = "popDown";
+        this.stoplichtSave.style.animationDelay = "0s";
         this.stoplichtForms.style.animationName = "formDisapear";
         this.stoplichtForms.style.animationDelay = "0s";
         this.stoplichtForms.style.animationDuration = "0.2s";
+    }
+
+    saveButtonClicked = () =>{
+        localStorage.setItem("stoplichtActie" + this.id, this.stoplichtTextareaActie.value);
+        localStorage.setItem("stoplichtSignalen" + this.id, this.stoplichtTextareaSignalen.value);
     }
 
     render(){
@@ -121,7 +134,8 @@ class StoplichtGezicht{
         this.stoplichtForms.appendChild(this.stoplichtFormContainer);
         this.stoplichtFormContainer.appendChild(this.stoplichtTextareaSignalen);
         this.stoplichtFormContainer.appendChild(this.stoplichtTextareaActie);
-        this.stoplichtForms.appendChild(this.stoplichtSave);
+        this.stoplichtSection.appendChild(this.stoplichtButtonWrapper);
+        this.stoplichtButtonWrapper.appendChild(this.stoplichtSave);
     }
 }
 const mainRender = new StoplichtMainRender("")
