@@ -100,6 +100,9 @@ class StoplichtGezicht{
         this.stoplichtForms.style.animationName = "formPopup";
         this.stoplichtForms.style.animationDelay = "0.6s";
         this.stoplichtForms.style.animationDuration = "1.2s";
+
+        this.stoplichtTextareaActie.innerText = localStorage.getItem("stoplichtActie" + this.id);
+        this.stoplichtTextareaSignalen.innerText = localStorage.getItem("stoplichtSignalen" + this.id);
     }
 
     stoplichtCloseButtonClicked = () =>{
